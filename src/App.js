@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="container-fluid text-center p-2">
       <Header />
-      <div className="row">
+      <div className="row justify-content-center">
         <Card />
         <Card />
         <Card />
