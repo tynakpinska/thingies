@@ -4,12 +4,12 @@ export const menu = (
     width="2rem"
     height="2rem"
     fill="#354F00"
-    class="bi bi-list"
+    className="bi bi-list"
     viewBox="0 0 16 16"
     cursor="pointer"
   >
     <path
-      fill-rule="evenodd"
+      fillRule="evenodd"
       d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
     />
   </svg>
@@ -21,7 +21,7 @@ export const basket = (
     width="2rem"
     height="2rem"
     fill="#354F00"
-    class="bi bi-basket"
+    className="bi bi-basket"
     viewBox="0 0 16 16"
     cursor="pointer"
   >
@@ -35,7 +35,7 @@ export const search = (
     width="1.5rem"
     height="1.5rem"
     fill="#354F00"
-    class="bi bi-search"
+    className="bi bi-search"
     viewBox="0 0 16 16"
     cursor="pointer"
   >
@@ -49,7 +49,7 @@ export const heart = (
     width="1.5rem"
     height="1.5rem"
     fill="#354F00"
-    class="bi bi-heart"
+    className="bi bi-heart"
     viewBox="0 0 16 16"
     cursor="pointer"
   >
@@ -63,12 +63,12 @@ export const filledHeart = (
     width="1.5rem"
     height="1.5rem"
     fill="#354F00"
-    class="bi bi-heart-fill"
+    className="bi bi-heart-fill"
     viewBox="0 0 16 16"
     cursor="pointer"
   >
     <path
-      fill-rule="evenodd"
+      fillRule="evenodd"
       d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"
     />
   </svg>
