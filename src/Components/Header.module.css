@@ -1,0 +1,12 @@
+.dropdown {
+  background: none;
+  border: none;
+}
+
+.dropdown :hover {
+  background: none;
+}
+
+.dropdown::after {
+  display: none;
+}

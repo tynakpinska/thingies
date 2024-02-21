@@ -1,0 +1,724 @@
+[
+    {
+        "id": 71,
+        "title": "Cámara Digital DSLR Profesional",
+        "price": 549,
+        "description": "Captura imágenes impresionantes con esta cámara DSLR profesional, perfecta para fotógrafos de todos los niveles. Incluye características avanzadas para un control total.",
+        "images": [
+            "https://source.unsplash.com/random/640x480?camera",
+            "https://source.unsplash.com/random/640x480?photography",
+            "https://source.unsplash.com/random/640x480?dslr"
+        ],
+        "creationAt": "2023-12-29T19:52:58.000Z",
+        "updatedAt": "2023-12-29T19:52:58.000Z",
+        "category": {
+            "id": 2,
+            "name": "Electronics",
+            "image": "https://i.imgur.com/ZANVnHE.jpeg",
+            "creationAt": "2023-12-29T13:22:20.000Z",
+            "updatedAt": "2023-12-29T13:22:20.000Z"
+        }
+    },
+    {
+        "id": 72,
+        "title": "Set de Cocina Premium",
+        "price": 250,
+        "description": "Equipa tu cocina con este set premium que incluye ollas, sartenes y utensilios de alta calidad. Diseñado para chefs caseros y profesionales.",
+        "images": [
+            "https://source.unsplash.com/random/640x480?kitchenware",
+            "https://source.unsplash.com/random/640x480?cookware",
+            "https://source.unsplash.com/random/640x480?kitchen"
+        ],
+        "creationAt": "2023-12-29T19:53:19.000Z",
+        "updatedAt": "2023-12-29T19:53:19.000Z",
+        "category": {
+            "id": 2,
+            "name": "Electronics",
+            "image": "https://i.imgur.com/ZANVnHE.jpeg",
+            "creationAt": "2023-12-29T13:22:20.000Z",
+            "updatedAt": "2023-12-29T13:22:20.000Z"
+        }
+    },
+    {
+        "id": 73,
+        "title": "Silla Ergonómica de Oficina",
+        "price": 299,
+        "description": "Maximiza tu comodidad y productividad con esta silla ergonómica diseñada para ofrecer soporte y comodidad durante largas horas de trabajo.",
+        "images": [
+            "https://source.unsplash.com/random/640x480?officechair",
+            "https://source.unsplash.com/random/640x480?office",
+            "https://source.unsplash.com/random/640x480?work"
+        ],
+        "creationAt": "2023-12-29T19:54:14.000Z",
+        "updatedAt": "2023-12-29T19:54:14.000Z",
+        "category": {
+            "id": 2,
+            "name": "Electronics",
+            "image": "https://i.imgur.com/ZANVnHE.jpeg",
+            "creationAt": "2023-12-29T13:22:20.000Z",
+            "updatedAt": "2023-12-29T13:22:20.000Z"
+        }
+    },
+    {
+        "id": 74,
+        "title": "Smartwatch Deportivo Premium",
+        "price": 299,
+        "description": "Un reloj inteligente con GPS integrado, seguimiento de actividad y salud, resistente al agua y con una batería de larga duración.",
+        "images": [
+            "https://source.unsplash.com/random/640x480?smartwatch",
+            "https://source.unsplash.com/random/640x480?gadget",
+            "https://source.unsplash.com/random/640x480?technology"
+        ],
+        "creationAt": "2023-12-29T19:56:23.000Z",
+        "updatedAt": "2023-12-29T19:56:23.000Z",
+        "category": {
+            "id": 2,
+            "name": "Electronics",
+            "image": "https://i.imgur.com/ZANVnHE.jpeg",
+            "creationAt": "2023-12-29T13:22:20.000Z",
+            "updatedAt": "2023-12-29T13:22:20.000Z"
+        }
+    },
+    {
+        "id": 75,
+        "title": "Sofá Seccional Moderno",
+        "price": 850,
+        "description": "Sofá seccional espacioso y cómodo con diseño moderno, perfecto para cualquier sala de estar o espacio de entretenimiento.",
+        "images": [
+            "https://source.unsplash.com/random/640x480?sofa",
+            "https://source.unsplash.com/random/640x480?furniture",
+            "https://source.unsplash.com/random/640x480?livingroom"
+        ],
+        "creationAt": "2023-12-29T19:57:14.000Z",
+        "updatedAt": "2023-12-29T19:57:14.000Z",
+        "category": {
+            "id": 3,
+            "name": "Furniture",
+            "image": "https://i.imgur.com/Qphac99.jpeg",
+            "creationAt": "2023-12-29T13:22:20.000Z",
+            "updatedAt": "2023-12-29T13:22:20.000Z"
+        }
+    },
+    {
+        "id": 76,
+        "title": "Zapatillas Running de Alto Rendimiento",
+        "price": 120,
+        "description": "Zapatillas ligeras y duraderas con soporte y amortiguación avanzada para corredores serios.",
+        "images": [
+            "https://source.unsplash.com/random/640x480?shoes",
+            "https://source.unsplash.com/random/640x480?running",
+            "https://source.unsplash.com/random/640x480?sneakers"
+        ],
+        "creationAt": "2023-12-29T19:57:25.000Z",
+        "updatedAt": "2023-12-29T19:57:25.000Z",
+        "category": {
+            "id": 4,
+            "name": "Shoes",
+            "image": "https://i.imgur.com/qNOjJje.jpeg",
+            "creationAt": "2023-12-29T13:22:20.000Z",
+            "updatedAt": "2023-12-29T13:22:20.000Z"
+        }
+    },
+    {
+        "id": 77,
+        "title": "Kit de Herramientas 25 en 1",
+        "price": 45,
+        "description": "Un kit de herramientas versátil y completo para todas tus necesidades de bricolaje y reparaciones caseras.",
+        "images": [
+            "https://source.unsplash.com/random/640x480?tools",
+            "https://source.unsplash.com/random/640x480?diy",
+            "https://source.unsplash.com/random/640x480?repair"
+        ],
+        "creationAt": "2023-12-29T19:57:34.000Z",
+        "updatedAt": "2023-12-29T19:57:34.000Z",
+        "category": {
+            "id": 5,
+            "name": "Miscellaneous",
+            "image": "https://i.imgur.com/BG8J0Fj.jpg",
+            "creationAt": "2023-12-29T13:22:20.000Z",
+            "updatedAt": "2023-12-29T13:22:20.000Z"
+        }
+    },
+    {
+        "id": 78,
+        "title": "Camiseta Algodón Orgánico",
+        "price": 29,
+        "description": "Camiseta suave, cómoda y ecológica hecha de algodón 100% orgánico. Disponible en varios colores y tamaños.",
+        "images": [
+            "https://source.unsplash.com/random/640x480?shirt",
+            "https://source.unsplash.com/random/640x480?clothing",
+            "https://source.unsplash.com/random/640x480?fashion"
+        ],
+        "creationAt": "2023-12-29T19:57:43.000Z",
+        "updatedAt": "2023-12-29T19:57:43.000Z",
+        "category": {
+            "id": 1,
+            "name": "change",
+            "image": "https://plus.unsplash.com/premium_photo-1700581634051-afa0328ef3fc?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "creationAt": "2023-12-29T13:22:20.000Z",
+            "updatedAt": "2023-12-29T15:04:08.000Z"
+        }
+    },
+    {
+        "id": 79,
+        "title": "Camiseta Algodón Orgánico - Blanco",
+        "price": 25,
+        "description": "Camiseta básica de algodón orgánico suave al tacto, perfecta para el uso diario. Corte clásico con cuello redondo.",
+        "images": [
+            "https://source.unsplash.com/random/640x480?white-tshirt",
+            "https://source.unsplash.com/random/640x480?clothing",
+            "https://source.unsplash.com/random/640x480?organic-cotton"
+        ],
+        "creationAt": "2023-12-29T20:01:54.000Z",
+        "updatedAt": "2023-12-29T20:01:54.000Z",
+        "category": {
+            "id": 1,
+            "name": "change",
+            "image": "https://plus.unsplash.com/premium_photo-1700581634051-afa0328ef3fc?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "creationAt": "2023-12-29T13:22:20.000Z",
+            "updatedAt": "2023-12-29T15:04:08.000Z"
+        }
+    },
+    {
+        "id": 80,
+        "title": "Jeans Denim Ajustados",
+        "price": 49,
+        "description": "Jeans ajustados con estilo y confort. Denim duradero y flexible que se adapta a cualquier figura.",
+        "images": [
+            "https://source.unsplash.com/random/640x480?jeans",
+            "https://source.unsplash.com/random/640x480?denim",
+            "https://source.unsplash.com/random/640x480?pants"
+        ],
+        "creationAt": "2023-12-29T20:02:04.000Z",
+        "updatedAt": "2023-12-29T20:02:04.000Z",
+        "category": {
+            "id": 1,
+            "name": "change",
+            "image": "https://plus.unsplash.com/premium_photo-1700581634051-afa0328ef3fc?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "creationAt": "2023-12-29T13:22:20.000Z",
+            "updatedAt": "2023-12-29T15:04:08.000Z"
+        }
+    },
+    {
+        "id": 81,
+        "title": "Vestido de Verano Floral",
+        "price": 59,
+        "description": "Vestido ligero de verano con estampado floral. Perfecto para días soleados, picnics y paseos por la playa.",
+        "images": [
+            "https://source.unsplash.com/random/640x480?summer-dress",
+            "https://source.unsplash.com/random/640x480?floral",
+            "https://source.unsplash.com/random/640x480?fashion"
+        ],
+        "creationAt": "2023-12-29T20:02:11.000Z",
+        "updatedAt": "2023-12-29T20:02:11.000Z",
+        "category": {
+            "id": 1,
+            "name": "change",
+            "image": "https://plus.unsplash.com/premium_photo-1700581634051-afa0328ef3fc?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "creationAt": "2023-12-29T13:22:20.000Z",
+            "updatedAt": "2023-12-29T15:04:08.000Z"
+        }
+    },
+    {
+        "id": 82,
+        "title": "Chaqueta de Cuero Negra",
+        "price": 199,
+        "description": "Chaqueta de cuero auténtico con diseño clásico. Robusta y elegante, ideal para un look urbano y moderno.",
+        "images": [
+            "https://source.unsplash.com/random/640x480?leather-jacket",
+            "https://source.unsplash.com/random/640x480?black-jacket",
+            "https://source.unsplash.com/random/640x480?biker"
+        ],
+        "creationAt": "2023-12-29T20:02:18.000Z",
+        "updatedAt": "2023-12-29T20:02:18.000Z",
+        "category": {
+            "id": 1,
+            "name": "change",
+            "image": "https://plus.unsplash.com/premium_photo-1700581634051-afa0328ef3fc?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "creationAt": "2023-12-29T13:22:20.000Z",
+            "updatedAt": "2023-12-29T15:04:08.000Z"
+        }
+    },
+    {
+        "id": 83,
+        "title": "Suéter de Lana Cálido",
+        "price": 75,
+        "description": "Suéter tejido de lana suave y cálido, ideal para los días fríos. Disponible en varios colores.",
+        "images": [
+            "https://source.unsplash.com/random/640x480?sweater",
+            "https://source.unsplash.com/random/640x480?wool",
+            "https://source.unsplash.com/random/640x480?knitwear"
+        ],
+        "creationAt": "2023-12-29T20:02:25.000Z",
+        "updatedAt": "2023-12-29T20:02:25.000Z",
+        "category": {
+            "id": 1,
+            "name": "change",
+            "image": "https://plus.unsplash.com/premium_photo-1700581634051-afa0328ef3fc?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "creationAt": "2023-12-29T13:22:20.000Z",
+            "updatedAt": "2023-12-29T15:04:08.000Z"
+        }
+    },
+    {
+        "id": 84,
+        "title": "marucha",
+        "price": 256,
+        "description": "nalgaza",
+        "images": [
+            "https://cdn.pixabay.com/photo/2015/09/16/08/53/shop-942398_1280.jpg",
+            "https://cdn.pixabay.com/photo/2015/09/16/08/53/shop-942398_1280.jpg",
+            "https://cdn.pixabay.com/photo/2015/09/16/08/53/shop-942398_1280.jpg"
+        ],
+        "creationAt": "2023-12-29T20:04:32.000Z",
+        "updatedAt": "2023-12-29T20:04:32.000Z",
+        "category": {
+            "id": 1,
+            "name": "change",
+            "image": "https://plus.unsplash.com/premium_photo-1700581634051-afa0328ef3fc?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "creationAt": "2023-12-29T13:22:20.000Z",
+            "updatedAt": "2023-12-29T15:04:08.000Z"
+        }
+    },
+    {
+        "id": 85,
+        "title": "borrar58",
+        "price": 911,
+        "description": "prodcuto prueba",
+        "images": [
+            "https://cdn.pixabay.com/photo/2020/12/11/18/24/woman-5823482_1280.png",
+            "https://cdn.pixabay.com/photo/2020/12/11/18/24/woman-5823482_1280.png"
+        ],
+        "creationAt": "2023-12-29T21:10:45.000Z",
+        "updatedAt": "2023-12-29T21:10:45.000Z",
+        "category": {
+            "id": 1,
+            "name": "change",
+            "image": "https://plus.unsplash.com/premium_photo-1700581634051-afa0328ef3fc?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "creationAt": "2023-12-29T13:22:20.000Z",
+            "updatedAt": "2023-12-29T15:04:08.000Z"
+        }
+    },
+    {
+        "id": 86,
+        "title": "kjshcdsh",
+        "price": 555,
+        "description": "kjbhlkjhkjh",
+        "images": [
+            "https://cdn.pixabay.com/photo/2020/12/11/18/24/woman-5823482_1280.png",
+            "https://cdn.pixabay.com/photo/2020/12/11/18/24/woman-5823482_1280.png"
+        ],
+        "creationAt": "2023-12-29T21:17:01.000Z",
+        "updatedAt": "2023-12-29T21:17:01.000Z",
+        "category": {
+            "id": 1,
+            "name": "change",
+            "image": "https://plus.unsplash.com/premium_photo-1700581634051-afa0328ef3fc?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "creationAt": "2023-12-29T13:22:20.000Z",
+            "updatedAt": "2023-12-29T15:04:08.000Z"
+        }
+    },
+    {
+        "id": 87,
+        "title": "fgaerg",
+        "price": 563,
+        "description": "gfeaergaer",
+        "images": [
+            "https://cdn.pixabay.com/photo/2020/12/11/18/24/woman-5823482_1280.png",
+            "https://cdn.pixabay.com/photo/2020/12/11/18/24/woman-5823482_1280.png"
+        ],
+        "creationAt": "2023-12-29T21:31:10.000Z",
+        "updatedAt": "2023-12-29T21:31:10.000Z",
+        "category": {
+            "id": 1,
+            "name": "change",
+            "image": "https://plus.unsplash.com/premium_photo-1700581634051-afa0328ef3fc?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "creationAt": "2023-12-29T13:22:20.000Z",
+            "updatedAt": "2023-12-29T15:04:08.000Z"
+        }
+    },
+    {
+        "id": 88,
+        "title": "Ballena",
+        "price": 25784,
+        "description": "Cetáceo",
+        "images": [
+            "https://cdn.pixabay.com/photo/2020/09/20/04/28/delivery-5585969_1280.jpg",
+            "https://cdn.pixabay.com/photo/2020/09/20/04/28/delivery-5585969_1280.jpg"
+        ],
+        "creationAt": "2023-12-29T21:39:37.000Z",
+        "updatedAt": "2023-12-29T21:39:37.000Z",
+        "category": {
+            "id": 1,
+            "name": "change",
+            "image": "https://plus.unsplash.com/premium_photo-1700581634051-afa0328ef3fc?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "creationAt": "2023-12-29T13:22:20.000Z",
+            "updatedAt": "2023-12-29T15:04:08.000Z"
+        }
+    },
+    {
+        "id": 89,
+        "title": "lampara",
+        "price": 254,
+        "description": "luces",
+        "images": [
+            "https://cdn.pixabay.com/photo/2016/05/21/22/15/light-bulbs-1407610_1280.jpg",
+            "https://cdn.pixabay.com/photo/2016/05/21/22/15/light-bulbs-1407610_1280.jpg"
+        ],
+        "creationAt": "2023-12-29T21:54:21.000Z",
+        "updatedAt": "2023-12-29T21:54:21.000Z",
+        "category": {
+            "id": 1,
+            "name": "change",
+            "image": "https://plus.unsplash.com/premium_photo-1700581634051-afa0328ef3fc?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "creationAt": "2023-12-29T13:22:20.000Z",
+            "updatedAt": "2023-12-29T15:04:08.000Z"
+        }
+    },
+    {
+        "id": 90,
+        "title": "dsf",
+        "price": 52,
+        "description": "ragfewrfwf",
+        "images": [
+            "https://cdn.pixabay.com/photo/2016/05/21/22/15/light-bulbs-1407610_1280.jpg",
+            "https://cdn.pixabay.com/photo/2016/05/21/22/15/light-bulbs-1407610_1280.jpg"
+        ],
+        "creationAt": "2023-12-29T21:59:49.000Z",
+        "updatedAt": "2023-12-29T21:59:49.000Z",
+        "category": {
+            "id": 1,
+            "name": "change",
+            "image": "https://plus.unsplash.com/premium_photo-1700581634051-afa0328ef3fc?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "creationAt": "2023-12-29T13:22:20.000Z",
+            "updatedAt": "2023-12-29T15:04:08.000Z"
+        }
+    },
+    {
+        "id": 91,
+        "title": "dfgadef",
+        "price": 8514,
+        "description": "gfargfrgfv",
+        "images": [
+            "https://cdn.pixabay.com/photo/2016/05/21/22/15/light-bulbs-1407610_1280.jpg",
+            "https://cdn.pixabay.com/photo/2016/05/21/22/15/light-bulbs-1407610_1280.jpg"
+        ],
+        "creationAt": "2023-12-29T22:06:59.000Z",
+        "updatedAt": "2023-12-29T22:06:59.000Z",
+        "category": {
+            "id": 1,
+            "name": "change",
+            "image": "https://plus.unsplash.com/premium_photo-1700581634051-afa0328ef3fc?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "creationAt": "2023-12-29T13:22:20.000Z",
+            "updatedAt": "2023-12-29T15:04:08.000Z"
+        }
+    },
+    {
+        "id": 92,
+        "title": "dfgaergf",
+        "price": 41,
+        "description": "ergaerg",
+        "images": [
+            "https://cdn.pixabay.com/photo/2016/05/21/22/15/light-bulbs-1407610_1280.jpg",
+            "https://cdn.pixabay.com/photo/2016/05/21/22/15/light-bulbs-1407610_1280.jpg"
+        ],
+        "creationAt": "2023-12-29T22:09:47.000Z",
+        "updatedAt": "2023-12-29T22:09:47.000Z",
+        "category": {
+            "id": 1,
+            "name": "change",
+            "image": "https://plus.unsplash.com/premium_photo-1700581634051-afa0328ef3fc?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "creationAt": "2023-12-29T13:22:20.000Z",
+            "updatedAt": "2023-12-29T15:04:08.000Z"
+        }
+    },
+    {
+        "id": 93,
+        "title": "xcv<xdsv",
+        "price": 52,
+        "description": "dvf<dvfs",
+        "images": [
+            "https://cdn.pixabay.com/photo/2016/05/21/22/15/light-bulbs-1407610_1280.jpg",
+            "https://cdn.pixabay.com/photo/2016/05/21/22/15/light-bulbs-1407610_1280.jpg"
+        ],
+        "creationAt": "2023-12-29T22:11:21.000Z",
+        "updatedAt": "2023-12-29T22:11:21.000Z",
+        "category": {
+            "id": 1,
+            "name": "change",
+            "image": "https://plus.unsplash.com/premium_photo-1700581634051-afa0328ef3fc?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "creationAt": "2023-12-29T13:22:20.000Z",
+            "updatedAt": "2023-12-29T15:04:08.000Z"
+        }
+    },
+    {
+        "id": 94,
+        "title": "w/shooes",
+        "price": 1,
+        "description": "A description",
+        "images": [
+            "https://cdn.pixabay.com/photo/2015/09/16/08/53/shop-942398_1280.jpg"
+        ],
+        "creationAt": "2023-12-29T22:53:57.000Z",
+        "updatedAt": "2023-12-29T22:53:57.000Z",
+        "category": {
+            "id": 1,
+            "name": "change",
+            "image": "https://plus.unsplash.com/premium_photo-1700581634051-afa0328ef3fc?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "creationAt": "2023-12-29T13:22:20.000Z",
+            "updatedAt": "2023-12-29T15:04:08.000Z"
+        }
+    },
+    {
+        "id": 95,
+        "title": "rfgre",
+        "price": 52,
+        "description": "ewrfewfefr",
+        "images": [
+            "https://cdn.pixabay.com/photo/2016/08/18/20/05/light-bulbs-1603766_1280.jpg",
+            "https://cdn.pixabay.com/photo/2016/08/18/20/05/light-bulbs-1603766_1280.jpg"
+        ],
+        "creationAt": "2023-12-30T02:22:34.000Z",
+        "updatedAt": "2023-12-30T02:22:34.000Z",
+        "category": {
+            "id": 1,
+            "name": "change",
+            "image": "https://plus.unsplash.com/premium_photo-1700581634051-afa0328ef3fc?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "creationAt": "2023-12-29T13:22:20.000Z",
+            "updatedAt": "2023-12-29T15:04:08.000Z"
+        }
+    },
+    {
+        "id": 96,
+        "title": "gbxdfgb",
+        "price": 25,
+        "description": "gegrfer",
+        "images": [
+            "https://cdn.pixabay.com/photo/2016/08/18/20/05/light-bulbs-1603766_1280.jpg",
+            "https://cdn.pixabay.com/photo/2016/08/18/20/05/light-bulbs-1603766_1280.jpg"
+        ],
+        "creationAt": "2023-12-30T05:06:05.000Z",
+        "updatedAt": "2023-12-30T05:06:05.000Z",
+        "category": {
+            "id": 1,
+            "name": "change",
+            "image": "https://plus.unsplash.com/premium_photo-1700581634051-afa0328ef3fc?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "creationAt": "2023-12-29T13:22:20.000Z",
+            "updatedAt": "2023-12-29T15:04:08.000Z"
+        }
+    },
+    {
+        "id": 97,
+        "title": "vbfxb",
+        "price": 84,
+        "description": "2do",
+        "images": [
+            "https://cdn.pixabay.com/photo/2016/08/18/20/05/light-bulbs-1603766_1280.jpg",
+            "https://cdn.pixabay.com/photo/2016/08/18/20/05/light-bulbs-1603766_1280.jpg"
+        ],
+        "creationAt": "2023-12-30T05:06:36.000Z",
+        "updatedAt": "2023-12-30T05:06:36.000Z",
+        "category": {
+            "id": 1,
+            "name": "change",
+            "image": "https://plus.unsplash.com/premium_photo-1700581634051-afa0328ef3fc?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "creationAt": "2023-12-29T13:22:20.000Z",
+            "updatedAt": "2023-12-29T15:04:08.000Z"
+        }
+    },
+    {
+        "id": 98,
+        "title": "New Product",
+        "price": 10,
+        "description": "2",
+        "images": [
+            "https://placeimg.com/640/480/any"
+        ],
+        "creationAt": "2023-12-30T06:04:45.000Z",
+        "updatedAt": "2023-12-30T06:04:45.000Z",
+        "category": {
+            "id": 1,
+            "name": "change",
+            "image": "https://plus.unsplash.com/premium_photo-1700581634051-afa0328ef3fc?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "creationAt": "2023-12-29T13:22:20.000Z",
+            "updatedAt": "2023-12-29T15:04:08.000Z"
+        }
+    },
+    {
+        "id": 99,
+        "title": "Table",
+        "price": 200,
+        "description": "a table",
+        "images": [
+            "https://assets.wfcdn.com/im/61194543/c_crop_resize_zoom-h240-w345%5Ecompr-r85/2260/226036396/default_name.jpg",
+            "https://assets.wfcdn.com/im/61194543/c_crop_resize_zoom-h240-w345%5Ecompr-r85/2260/226036396/default_name.jpg",
+            "https://assets.wfcdn.com/im/61194543/c_crop_resize_zoom-h240-w345%5Ecompr-r85/2260/226036396/default_name.jpg"
+        ],
+        "creationAt": "2023-12-30T06:50:29.000Z",
+        "updatedAt": "2023-12-30T06:50:29.000Z",
+        "category": {
+            "id": 3,
+            "name": "Furniture",
+            "image": "https://i.imgur.com/Qphac99.jpeg",
+            "creationAt": "2023-12-29T13:22:20.000Z",
+            "updatedAt": "2023-12-29T13:22:20.000Z"
+        }
+    },
+    {
+        "id": 100,
+        "title": "Table",
+        "price": 200,
+        "description": "a table",
+        "images": [
+            "https://assets.wfcdn.com/im/61194543/c_crop_resize_zoom-h240-w345%5Ecompr-r85/2260/226036396/default_name.jpg",
+            "https://assets.wfcdn.com/im/61194543/c_crop_resize_zoom-h240-w345%5Ecompr-r85/2260/226036396/default_name.jpg",
+            "https://assets.wfcdn.com/im/61194543/c_crop_resize_zoom-h240-w345%5Ecompr-r85/2260/226036396/default_name.jpg"
+        ],
+        "creationAt": "2023-12-30T06:50:32.000Z",
+        "updatedAt": "2023-12-30T06:50:32.000Z",
+        "category": {
+            "id": 3,
+            "name": "Furniture",
+            "image": "https://i.imgur.com/Qphac99.jpeg",
+            "creationAt": "2023-12-29T13:22:20.000Z",
+            "updatedAt": "2023-12-29T13:22:20.000Z"
+        }
+    },
+    {
+        "id": 101,
+        "title": "Table",
+        "price": 200,
+        "description": "a table",
+        "images": [
+            "https://assets.wfcdn.com/im/61194543/c_crop_resize_zoom-h240-w345%5Ecompr-r85/2260/226036396/default_name.jpg",
+            "https://assets.wfcdn.com/im/61194543/c_crop_resize_zoom-h240-w345%5Ecompr-r85/2260/226036396/default_name.jpg",
+            "https://assets.wfcdn.com/im/61194543/c_crop_resize_zoom-h240-w345%5Ecompr-r85/2260/226036396/default_name.jpg"
+        ],
+        "creationAt": "2023-12-30T06:50:34.000Z",
+        "updatedAt": "2023-12-30T06:50:34.000Z",
+        "category": {
+            "id": 3,
+            "name": "Furniture",
+            "image": "https://i.imgur.com/Qphac99.jpeg",
+            "creationAt": "2023-12-29T13:22:20.000Z",
+            "updatedAt": "2023-12-29T13:22:20.000Z"
+        }
+    },
+    {
+        "id": 102,
+        "title": "Table",
+        "price": 200,
+        "description": "a table",
+        "images": [
+            "https://assets.wfcdn.com/im/61194543/c_crop_resize_zoom-h240-w345%5Ecompr-r85/2260/226036396/default_name.jpg",
+            "https://assets.wfcdn.com/im/61194543/c_crop_resize_zoom-h240-w345%5Ecompr-r85/2260/226036396/default_name.jpg",
+            "https://assets.wfcdn.com/im/61194543/c_crop_resize_zoom-h240-w345%5Ecompr-r85/2260/226036396/default_name.jpg"
+        ],
+        "creationAt": "2023-12-30T06:50:35.000Z",
+        "updatedAt": "2023-12-30T06:50:35.000Z",
+        "category": {
+            "id": 3,
+            "name": "Furniture",
+            "image": "https://i.imgur.com/Qphac99.jpeg",
+            "creationAt": "2023-12-29T13:22:20.000Z",
+            "updatedAt": "2023-12-29T13:22:20.000Z"
+        }
+    },
+    {
+        "id": 103,
+        "title": "Table",
+        "price": 200,
+        "description": "a table",
+        "images": [
+            "https://assets.wfcdn.com/im/61194543/c_crop_resize_zoom-h240-w345%5Ecompr-r85/2260/226036396/default_name.jpg",
+            "https://assets.wfcdn.com/im/61194543/c_crop_resize_zoom-h240-w345%5Ecompr-r85/2260/226036396/default_name.jpg",
+            "https://assets.wfcdn.com/im/61194543/c_crop_resize_zoom-h240-w345%5Ecompr-r85/2260/226036396/default_name.jpg"
+        ],
+        "creationAt": "2023-12-30T06:50:36.000Z",
+        "updatedAt": "2023-12-30T06:50:36.000Z",
+        "category": {
+            "id": 3,
+            "name": "Furniture",
+            "image": "https://i.imgur.com/Qphac99.jpeg",
+            "creationAt": "2023-12-29T13:22:20.000Z",
+            "updatedAt": "2023-12-29T13:22:20.000Z"
+        }
+    },
+    {
+        "id": 104,
+        "title": "Table",
+        "price": 200,
+        "description": "a table",
+        "images": [
+            "https://assets.wfcdn.com/im/61194543/c_crop_resize_zoom-h240-w345%5Ecompr-r85/2260/226036396/default_name.jpg",
+            "https://assets.wfcdn.com/im/61194543/c_crop_resize_zoom-h240-w345%5Ecompr-r85/2260/226036396/default_name.jpg",
+            "https://assets.wfcdn.com/im/61194543/c_crop_resize_zoom-h240-w345%5Ecompr-r85/2260/226036396/default_name.jpg"
+        ],
+        "creationAt": "2023-12-30T06:50:37.000Z",
+        "updatedAt": "2023-12-30T06:50:37.000Z",
+        "category": {
+            "id": 3,
+            "name": "Furniture",
+            "image": "https://i.imgur.com/Qphac99.jpeg",
+            "creationAt": "2023-12-29T13:22:20.000Z",
+            "updatedAt": "2023-12-29T13:22:20.000Z"
+        }
+    },
+    {
+        "id": 105,
+        "title": "Table",
+        "price": 200,
+        "description": "a table",
+        "images": [
+            "https://assets.wfcdn.com/im/61194543/c_crop_resize_zoom-h240-w345%5Ecompr-r85/2260/226036396/default_name.jpg",
+            "https://assets.wfcdn.com/im/61194543/c_crop_resize_zoom-h240-w345%5Ecompr-r85/2260/226036396/default_name.jpg",
+            "https://assets.wfcdn.com/im/61194543/c_crop_resize_zoom-h240-w345%5Ecompr-r85/2260/226036396/default_name.jpg"
+        ],
+        "creationAt": "2023-12-30T06:50:38.000Z",
+        "updatedAt": "2023-12-30T06:50:38.000Z",
+        "category": {
+            "id": 3,
+            "name": "Furniture",
+            "image": "https://i.imgur.com/Qphac99.jpeg",
+            "creationAt": "2023-12-29T13:22:20.000Z",
+            "updatedAt": "2023-12-29T13:22:20.000Z"
+        }
+    },
+    {
+        "id": 106,
+        "title": "w/shooes",
+        "price": 1,
+        "description": "A description",
+        "images": [
+            "https://cdn.pixabay.com/photo/2015/09/16/08/53/shop-942398_1280.jpg"
+        ],
+        "creationAt": "2023-12-30T08:50:46.000Z",
+        "updatedAt": "2023-12-30T08:50:46.000Z",
+        "category": {
+            "id": 1,
+            "name": "change",
+            "image": "https://plus.unsplash.com/premium_photo-1700581634051-afa0328ef3fc?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "creationAt": "2023-12-29T13:22:20.000Z",
+            "updatedAt": "2023-12-29T15:04:08.000Z"
+        }
+    },
+    {
+        "id": 107,
+        "title": "Sofa",
+        "price": 300,
+        "description": "a Sofa",
+        "images": [
+            "https://www.ikea.com/global/assets/range-categorisation/images/leather-coated-fabric-sofas-10662.jpeg?imwidth=400",
+            "https://www.ikea.com/global/assets/range-categorisation/images/leather-coated-fabric-sofas-10662.jpeg?imwidth=400",
+            "https://www.ikea.com/global/assets/range-categorisation/images/leather-coated-fabric-sofas-10662.jpeg?imwidth=400"
+        ],
+        "creationAt": "2023-12-30T09:34:43.000Z",
+        "updatedAt": "2023-12-30T09:34:43.000Z",
+        "category": {
+            "id": 3,
+            "name": "Furniture",
+            "image": "https://i.imgur.com/Qphac99.jpeg",
+            "creationAt": "2023-12-29T13:22:20.000Z",
+            "updatedAt": "2023-12-29T13:22:20.000Z"
+        }
+    }
+]
