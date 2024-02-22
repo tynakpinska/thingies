@@ -1,13 +1,22 @@
-import { configureStore } from '@reduxjs/toolkit'
-import { shopApi } from './shopApi'
+import { configureStore } from "@reduxjs/toolkit";
+import { shopApi } from "./shopApi";
 
-export const store = configureStore({
-  reducer: {
-    // Add the generated reducer as a specific top-level slice
-    [shopApi.reducerPath]: shopApi.reducer,
+import productsReducer from "./stateSlices/productsSlice";
+
+export const store = configureStore(
+  {
+    reducer: {
+      // Add the generated reducer as a specific top-level slice
+      [shopApi.reducerPath]: shopApi.reducer,
+    },
+    // Adding the api middleware enables caching, invalidation, polling,
+    // and other useful features of `rtk-query`.
+    middleware: (getDefaultMiddleware) =>
+      getDefaultMiddleware().concat(shopApi.middleware),
   },
-  // Adding the api middleware enables caching, invalidation, polling,
-  // and other useful features of `rtk-query`.
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(shopApi.middleware),
-})
+  {
+    products: productsReducer,
+  }
+);
+
+window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();

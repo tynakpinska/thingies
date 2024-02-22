@@ -3,10 +3,14 @@
   border: none;
 }
 
-.dropdown :hover {
-  background: none;
-}
-
 .dropdown::after {
   display: none;
+}
+
+.dropdownItem {
+  color: #550000;
+}
+
+.dropdownItem:hover {
+  background-color: #ffaaaa;
 }
