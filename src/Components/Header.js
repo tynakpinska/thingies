@@ -1,40 +1,30 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import Dropdown from "react-bootstrap/Dropdown";
 import styles from "./Header.module.css";
 import { menu, search, filledHeart, basket } from "../icons";
 
 import { useGetCategoriesQuery } from "../redux/shopApi";
-import { filterProductsByCategory } from "../redux/stateSlices/productsSlice";
 
 const Header = () => {
-  const { data, isLoading, isSuccess, isError, error } =
-    useGetCategoriesQuery();
+  const { isLoading, isSuccess, isError, error } = useGetCategoriesQuery();
 
-  const products = useSelector((state) => {
-    console.log(state)
-    return state.products
+  const categories = useSelector((state) => {
+    return state.categories;
   });
-  const dispatch = useDispatch();
 
   let categoriesList = [];
 
   if (isLoading) {
     console.log("Loading...");
   } else if (isSuccess) {
-    data.forEach((category) => {
-      if (!categoriesList.find((el) => el[1] === category.name)) {
-        categoriesList.push([category.id, category.name]);
-      }
-    });
+    categoriesList = categories;
   } else if (isError) {
     console.log(error);
   }
 
   function handleClick(e) {
     console.log(e.target.innerText);
-    dispatch(filterProductsByCategory(products, e.target.innerText));
-    console.log(products)
   }
 
   return (
