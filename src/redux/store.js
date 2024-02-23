@@ -2,6 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import { shopApi } from "./shopApi";
 import productsSlice from "./stateSlices/productsSlice";
 import categoriesSlice from "./stateSlices/categoriesSlice";
+import chosenCategorySlice from "./stateSlices/chosenCategorySlice";
 
 import productsReducer from "./stateSlices/productsSlice";
 import categoriesReducer from "./stateSlices/categoriesSlice";
@@ -13,6 +14,7 @@ export const store = configureStore(
       [shopApi.reducerPath]: shopApi.reducer,
       [productsSlice.name]: productsSlice.reducer,
       [categoriesSlice.name]: categoriesSlice.reducer,
+      [chosenCategorySlice.name]: chosenCategorySlice.reducer,
     },
     // Adding the api middleware enables caching, invalidation, polling,
     // and other useful features of `rtk-query`.

@@ -12,6 +12,10 @@ const ProductsList = () => {
     return state.products;
   });
 
+  const chosenCategory = useSelector((state) => {
+    return state.chosenCategory;
+  });
+
   let productsList = [];
 
   if (isLoading) {
@@ -19,7 +23,12 @@ const ProductsList = () => {
   } else if (isSuccess) {
     products.forEach((product) => {
       if (productsList.length < 20) {
-        productsList.push(<Card product={product} key={product.id} />);
+        if (chosenCategory === "") {
+          productsList.push(<Card product={product} key={product.id} />);
+        } else {
+          if (product.category.name === chosenCategory)
+            productsList.push(<Card product={product} key={product.id} />);
+        }
       }
     });
   } else if (isError) {

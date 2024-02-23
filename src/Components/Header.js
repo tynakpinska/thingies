@@ -1,10 +1,11 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import Dropdown from "react-bootstrap/Dropdown";
 import styles from "./Header.module.css";
 import { menu, search, filledHeart, basket } from "../icons";
 
 import { useGetCategoriesQuery } from "../redux/shopApi";
+import { setCategory } from "../redux/stateSlices/chosenCategorySlice";
 
 const Header = () => {
   const { isLoading, isSuccess, isError, error } = useGetCategoriesQuery();
@@ -12,6 +13,8 @@ const Header = () => {
   const categories = useSelector((state) => {
     return state.categories;
   });
+
+  const dispatch = useDispatch();
 
   let categoriesList = [];
 
@@ -24,7 +27,12 @@ const Header = () => {
   }
 
   function handleClick(e) {
-    console.log(e.target.innerText);
+    dispatch(
+      setCategory({
+        type: "products/fetchProducts",
+        payload: e.target.innerText,
+      })
+    );
   }
 
   return (
