@@ -49,7 +49,6 @@ const Header = () => {
         <Dropdown.Menu>
           {categoriesList.map((category) => (
             <Dropdown.Item
-              href="#/action-1"
               key={category[0]}
               className={styles.dropdownItem}
               onClick={handleClick}
@@ -60,7 +59,19 @@ const Header = () => {
         </Dropdown.Menu>
       </Dropdown>
       <h1>Thingies</h1>
-      {search}
+      <div className="input-group " style={{ width: "30vw" }}>
+        <span className="input-group-text" id="basic-addon1">
+          {search}
+        </span>
+        <input
+          type="text"
+          className="form-control"
+          placeholder="Search..."
+          aria-label="Search bar"
+          aria-describedby="basic-addon1"
+        />
+      </div>
+
       {filledHeart}
       {basket}
     </header>
