@@ -11,7 +11,6 @@ export const shopApi = createApi({
       query: () => "products",
       onQueryStarted: async (query, { dispatch, queryFulfilled }) => {
         const { data } = await queryFulfilled;
-        console.log(data);
         dispatch(
           fetchProducts({ type: "products/fetchProducts", payload: data })
         );

@@ -1,7 +1,19 @@
-import React from "react";
-import { heart } from "../icons";
+import React, { useState } from "react";
+import { heart, filledHeart } from "../icons";
 
 const Card = ({ product }) => {
+  const [buttonText, setButtonText] = useState("Add to cart");
+  const [currentIcon, setCurrentIcon] = useState(heart);
+
+  const handleButtonClick = () => {
+    buttonText === "Add to cart"
+      ? setButtonText("Remove from cart")
+      : setButtonText("Add to cart");
+  };
+
+  const handleIconClick = () => {
+    currentIcon === heart ? setCurrentIcon(filledHeart) : setCurrentIcon(heart);
+  };
   return (
     <div
       className="card col-3 col-md-2 m-1 p-2 d-flex flex-column justify-content-between"
@@ -17,12 +29,14 @@ const Card = ({ product }) => {
         <p className="card-title">{product.title}</p>
         <p>{product.price + "$"}</p>
         <div className="d-flex align-items-center justify-items-center mt-1">
-          {heart}
+          <div onClick={handleIconClick}>{currentIcon}</div>
           <button
-            className="btn btn-primary ms-1"
-            style={{ backgroundColor: "#7A9F35", border: "none" }}
+            className={`btn ${
+              buttonText === "Add to cart" ? "btn-success" : "btn-danger"
+            } ms-1`}
+            onClick={handleButtonClick}
           >
-            Buy
+            {buttonText}
           </button>
         </div>
       </div>
