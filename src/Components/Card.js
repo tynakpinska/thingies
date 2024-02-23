@@ -1,18 +1,37 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { heart, filledHeart } from "../icons";
+
+import { addToCart, removeFromCart } from "../redux/stateSlices/cartSlice";
+import {
+  addToFavourites,
+  removeFromFavourites,
+} from "../redux/stateSlices/favouritesSlice";
 
 const Card = ({ product }) => {
   const [buttonText, setButtonText] = useState("Add to cart");
   const [currentIcon, setCurrentIcon] = useState(heart);
 
-  const handleButtonClick = () => {
-    buttonText === "Add to cart"
-      ? setButtonText("Remove from cart")
-      : setButtonText("Add to cart");
+  const dispatch = useDispatch();
+
+  const handleButtonClick = (e) => {
+    if (buttonText === "Add to cart") {
+      setButtonText("Remove from cart");
+      dispatch(addToCart(product));
+    } else {
+      setButtonText("Add to cart");
+      dispatch(removeFromCart(product));
+    }
   };
 
   const handleIconClick = () => {
-    currentIcon === heart ? setCurrentIcon(filledHeart) : setCurrentIcon(heart);
+    if (currentIcon === heart) {
+      setCurrentIcon(filledHeart);
+      dispatch(addToFavourites(product));
+    } else {
+      setCurrentIcon(heart);
+      dispatch(removeFromFavourites(product));
+    }
   };
   return (
     <div

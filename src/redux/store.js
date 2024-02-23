@@ -4,10 +4,12 @@ import productsSlice from "./stateSlices/productsSlice";
 import categoriesSlice from "./stateSlices/categoriesSlice";
 import chosenCategorySlice from "./stateSlices/chosenCategorySlice";
 import cartSlice from "./stateSlices/cartSlice";
+import favouritesSlice from "./stateSlices/favouritesSlice";
 
 import productsReducer from "./stateSlices/productsSlice";
 import categoriesReducer from "./stateSlices/categoriesSlice";
 import cartReducer from "./stateSlices/cartSlice";
+import favouritesReducer from "./stateSlices/favouritesSlice";
 
 export const store = configureStore(
   {
@@ -18,6 +20,7 @@ export const store = configureStore(
       [categoriesSlice.name]: categoriesSlice.reducer,
       [chosenCategorySlice.name]: chosenCategorySlice.reducer,
       [cartSlice.name]: cartSlice.reducer,
+      [favouritesSlice.name]: favouritesSlice.reducer,
     },
     // Adding the api middleware enables caching, invalidation, polling,
     // and other useful features of `rtk-query`.
@@ -28,6 +31,7 @@ export const store = configureStore(
     products: productsReducer,
     categories: categoriesReducer,
     cart: cartReducer,
+    favourites: favouritesReducer,
   }
 );
 
