@@ -2,8 +2,9 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Dropdown from "react-bootstrap/Dropdown";
 import styles from "./Header.module.css";
-import { menu, search, filledHeart, basket } from "../icons";
+import { menu, filledHeart, basket } from "../icons";
 
+import { setRoute } from "../redux/stateSlices/routeSlice";
 import { useGetCategoriesQuery } from "../redux/shopApi";
 import { setCategory } from "../redux/stateSlices/chosenCategorySlice";
 
@@ -12,6 +13,14 @@ const Header = () => {
 
   const categories = useSelector((state) => {
     return state.categories;
+  });
+
+  const cart = useSelector((state) => {
+    return state.cart;
+  });
+
+  const favourites = useSelector((state) => {
+    return state.favourites;
   });
 
   const dispatch = useDispatch();
@@ -26,14 +35,24 @@ const Header = () => {
     console.log(error);
   }
 
-  function handleClick(e) {
+  const handleCategoryClick = (e) => {
     dispatch(
       setCategory({
         type: "products/fetchProducts",
         payload: e.target.innerText,
       })
     );
-  }
+  };
+
+  const handleHeaderItemClick = (e) => {
+    if (e.currentTarget.lastChild.innerText === "Thingies") {
+      dispatch(setRoute("Shop"));
+    } else if (e.currentTarget.lastChild.classList.contains("bi-basket")) {
+      dispatch(setRoute("Cart"));
+    } else if (e.currentTarget.lastChild.classList.contains("bi-heart-fill")) {
+      dispatch(setRoute("Favourites"));
+    }
+  };
 
   return (
     <header className="d-flex justify-content-around align-items-center">
@@ -51,29 +70,25 @@ const Header = () => {
             <Dropdown.Item
               key={category[0]}
               className={styles.dropdownItem}
-              onClick={handleClick}
+              onClick={handleCategoryClick}
             >
               {category[1]}
             </Dropdown.Item>
           ))}
         </Dropdown.Menu>
       </Dropdown>
-      <h1>Thingies</h1>
-      <div className="input-group " style={{ width: "30vw" }}>
-        <span className="input-group-text" id="basic-addon1">
-          {search}
-        </span>
-        <input
-          type="text"
-          className="form-control"
-          placeholder="Search..."
-          aria-label="Search bar"
-          aria-describedby="basic-addon1"
-        />
+      <div onClick={handleHeaderItemClick} className={styles.header}>
+        <h1>Thingies</h1>
       </div>
 
-      {filledHeart}
-      {basket}
+      <div className={styles.icon} onClick={handleHeaderItemClick}>
+        <span className={styles.numberOfItems}>{favourites.length}</span>
+        {filledHeart}
+      </div>
+      <div className={styles.icon} onClick={handleHeaderItemClick}>
+        <span className={styles.numberOfItems}>{cart.length}</span>
+        {basket}
+      </div>
     </header>
   );
 };

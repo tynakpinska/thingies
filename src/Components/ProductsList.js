@@ -23,7 +23,7 @@ const ProductsList = () => {
   } else if (isSuccess) {
     products.forEach((product) => {
       if (productsList.length < 20) {
-        if (chosenCategory === "") {
+        if (chosenCategory === "All categories") {
           productsList.push(<Card product={product} key={product.id} />);
         } else {
           if (product.category.name === chosenCategory)
@@ -35,7 +35,12 @@ const ProductsList = () => {
     productsList = <p>{error}</p>;
   }
 
-  return <div className="row justify-content-center">{productsList}</div>;
+  return (
+    <div className="row justify-content-center">
+      <h2>{chosenCategory}</h2>
+      {productsList}
+    </div>
+  );
 };
 
 export default ProductsList;

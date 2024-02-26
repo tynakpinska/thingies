@@ -1,13 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = [];
+const initialState = [[0, "All categories"]];
 
 const categoriesSlice = createSlice({
   name: "categories",
   initialState,
   reducers: {
     fetchCategories(state, action) {
-      return action.payload.payload;
+      return [...state, ...action.payload.payload];
     },
   },
 });

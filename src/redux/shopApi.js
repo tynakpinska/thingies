@@ -11,9 +11,30 @@ export const shopApi = createApi({
       query: () => "products",
       onQueryStarted: async (query, { dispatch, queryFulfilled }) => {
         const { data } = await queryFulfilled;
-        dispatch(
-          fetchProducts({ type: "products/fetchProducts", payload: data })
-        );
+        for (let i = 0; i <= 20; i++) {
+          const { id, title, price, description, category } = data[i];
+          async function fetchData() {
+            const response = await fetch(
+              "https://source.unsplash.com/random/300x300"
+            );
+            let imageUrl = response.url;
+            let newProduct = {
+              id,
+              name: title,
+              price,
+              description,
+              category,
+              image: imageUrl,
+            };
+            dispatch(
+              fetchProducts({
+                type: "products/fetchProducts",
+                payload: newProduct,
+              })
+            );
+          }
+          fetchData();
+        }
       },
     }),
     getCategories: builder.query({

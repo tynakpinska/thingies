@@ -1,3 +1,8 @@
+.header:hover {
+
+cursor: pointer;
+}
+
 .dropdown {
   background: none;
   border: none;
@@ -13,4 +18,24 @@
 
 .dropdownItem:hover {
   background-color: #ffaaaa;
+}
+
+.icon {
+   position: relative;
+   padding: 5px;
+}
+
+.numberOfItems {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 16px;
+  height: 16px;
+  background: #740000;
+  color: #fbc3c3;
+  border-radius: 50%;
+  font-size: .6rem;
+  font-weight: bold;
+  text-align: center;
 }

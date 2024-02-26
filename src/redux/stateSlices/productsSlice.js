@@ -7,7 +7,7 @@ const productsSlice = createSlice({
   initialState,
   reducers: {
     fetchProducts(state, action) {
-      return action.payload.payload;
+      return [...state, action.payload.payload];
     },
     filterProductsByName(state, action) {
       state = action.payload;
@@ -15,6 +15,5 @@ const productsSlice = createSlice({
   },
 });
 
-export const { fetchProducts, filterProductsByName } =
-  productsSlice.actions;
+export const { fetchProducts, filterProductsByName } = productsSlice.actions;
 export default productsSlice;

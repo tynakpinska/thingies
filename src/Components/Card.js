@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { heart, filledHeart } from "../icons";
 
 import { addToCart, removeFromCart } from "../redux/stateSlices/cartSlice";
@@ -11,18 +11,25 @@ import {
 const Card = ({ product }) => {
   const [buttonText, setButtonText] = useState("Add to cart");
   const [currentIcon, setCurrentIcon] = useState(heart);
-  const [imageUrl, setImageUrl] = useState("");
 
   const dispatch = useDispatch();
 
+  const cart = useSelector((state) => {
+    return state.cart;
+  });
+
+  const favourites = useSelector((state) => {
+    return state.favourites;
+  });
+
   useEffect(() => {
-    async function fetchData() {
-      console.log('fetching image')
-      const response = await fetch("https://source.unsplash.com/random/300x300");
-      setImageUrl(response.url);
+    if (cart.find((item) => item.id === product.id)) {
+      setButtonText("Remove from cart");
     }
-    fetchData();
-  }, []);
+    if (favourites.find((item) => item.id === product.id)) {
+      setCurrentIcon(filledHeart);
+    }
+  }, [cart, favourites, product]);
 
   const handleButtonClick = () => {
     if (buttonText === "Add to cart") {
@@ -45,17 +52,17 @@ const Card = ({ product }) => {
   };
   return (
     <div
-      className="card col-3 col-md-2 m-1 p-2 d-flex flex-column justify-content-between"
+      className="card col-xs-12 col-sm-3 col-lg-2 m-1 p-2 d-flex flex-column justify-content-between"
       style={{ backgroundColor: "#FFAAAA" }}
     >
       <img
-        src={imageUrl}
+        src={product.image}
         className="card-img-top img-fluid p-2"
         alt="..."
-        style={{ backgroundColor: "#FFF", maxHeight: "50%" }}
+        style={{ backgroundColor: "#FFF", maxHeight: "50%", minWidth: "100px" }}
       />
       <div className="card-body p-1 d-flex flex-column justify-content-center align-items-center flex-grow-0">
-        <p className="card-title">{product.title}</p>
+        <p className="card-title">{product.name}</p>
         <p>{product.price + "$"}</p>
         <div className="d-flex align-items-center justify-items-center mt-1">
           <div onClick={handleIconClick}>{currentIcon}</div>
