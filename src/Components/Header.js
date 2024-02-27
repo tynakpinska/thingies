@@ -58,11 +58,11 @@ const Header = () => {
     <header className="d-flex justify-content-around align-items-center">
       <Dropdown>
         <Dropdown.Toggle
-          variant="success"
+          variant="secondary"
           id="dropdown-basic"
           className={styles.dropdown}
         >
-          {menu}
+          {menu}Categories
         </Dropdown.Toggle>
 
         <Dropdown.Menu>

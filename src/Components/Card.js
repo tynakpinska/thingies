@@ -52,7 +52,7 @@ const Card = ({ product }) => {
   };
   return (
     <div
-      className="card col-8 col-sm-3 col-lg-2 m-1 p-2 d-flex flex-column justify-content-between"
+      className="card col-8 col-sm-3 col-lg-2 m-2 p-3 d-flex flex-column justify-content-between"
       style={{ backgroundColor: "#FFAAAA" }}
     >
       <img
@@ -62,7 +62,7 @@ const Card = ({ product }) => {
         style={{ backgroundColor: "#FFF", maxHeight: "50%", minWidth: "100px" }}
       />
       <div className="card-body p-1 d-flex flex-column justify-content-center align-items-center flex-grow-0">
-        <p className="card-title">{product.name}</p>
+        <p className="card-title fw-bold">{product.name}</p>
         <p>{product.price + "$"}</p>
         <div className="d-flex align-items-center justify-items-center mt-1">
           <div onClick={handleIconClick}>{currentIcon}</div>

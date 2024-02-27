@@ -1,11 +1,13 @@
 .header:hover {
-
-cursor: pointer;
+  cursor: pointer;
 }
 
 .dropdown {
   background: none;
   border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .dropdown::after {
@@ -21,8 +23,8 @@ cursor: pointer;
 }
 
 .icon {
-   position: relative;
-   padding: 5px;
+  position: relative;
+  padding: 5px;
 }
 
 .numberOfItems {
@@ -35,7 +37,15 @@ cursor: pointer;
   background: #740000;
   color: #fbc3c3;
   border-radius: 50%;
-  font-size: .6rem;
+  font-size: 0.6rem;
   font-weight: bold;
   text-align: center;
+}
+
+.btn:hover,
+.btn:active,
+.btn:focus,
+.btn.show {
+  background-color: #ffaaaa;
+  border-color: #ffaaaa;
 }

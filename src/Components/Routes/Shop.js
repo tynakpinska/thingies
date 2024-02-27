@@ -13,12 +13,12 @@ const Shop = () => {
       <h2>Shop</h2>
       <div
         className="input-group mt-3 mb-2 "
-        style={{ width: "30vw", margin: "auto", background: "#ffaaaa" }}
+        style={{ width: "30vw", margin: "auto", background: "#ffaaaa", borderRadius: "50%" }}
       >
         <span
           className="input-group-text"
           id="basic-addon1"
-          style={{ background: "#ffaaaa", outline: "none" }}
+          style={{ background: "#ffaaaa", outline: "none", border: "none"  }}
         >
           {search}
         </span>
@@ -28,7 +28,7 @@ const Shop = () => {
           placeholder="Search..."
           aria-label="Search bar"
           aria-describedby="basic-addon1"
-          style={{ background: "#ffaaaa", outline: "none" }}
+          style={{ background: "#ffaaaa", outline: "none", border: "none" }}
         />
       </div>
 
