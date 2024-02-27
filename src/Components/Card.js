@@ -52,7 +52,7 @@ const Card = ({ product }) => {
   };
   return (
     <div
-      className="card col-xs-12 col-sm-3 col-lg-2 m-1 p-2 d-flex flex-column justify-content-between"
+      className="card col-8 col-sm-3 col-lg-2 m-1 p-2 d-flex flex-column justify-content-between"
       style={{ backgroundColor: "#FFAAAA" }}
     >
       <img
@@ -69,7 +69,7 @@ const Card = ({ product }) => {
           <button
             className={`btn ${
               buttonText === "Add to cart" ? "btn-success" : "btn-danger"
-            } ms-1`}
+            } ms-2`}
             onClick={handleButtonClick}
           >
             {buttonText}

@@ -11,9 +11,19 @@ const ProductsList = () => {
   const products = useSelector((state) => {
     return state.products;
   });
+  const favourites = useSelector((state) => {
+    return state.favourites;
+  });
+  const cart = useSelector((state) => {
+    return state.cart;
+  });
 
   const chosenCategory = useSelector((state) => {
     return state.chosenCategory;
+  });
+
+  const route = useSelector((state) => {
+    return state.route;
   });
 
   let productsList = [];
@@ -21,24 +31,30 @@ const ProductsList = () => {
   if (isLoading) {
     productsList = <p>Loading...</p>;
   } else if (isSuccess) {
-    products.forEach((product) => {
-      if (productsList.length < 20) {
+    if (route === "Shop") {
+      products.forEach((product) => {
         if (chosenCategory === "All categories") {
-          productsList.push(<Card product={product} key={product.id} />);
+          productsList.push(product);
         } else {
           if (product.category.name === chosenCategory)
-            productsList.push(<Card product={product} key={product.id} />);
+            productsList.push(product);
         }
-      }
-    });
+      });
+    }
   } else if (isError) {
     productsList = <p>{error}</p>;
   }
 
+  if (route === "Favourites") productsList = favourites;
+  else if (route === "Cart") productsList = cart;
+
   return (
     <div className="row justify-content-center">
-      <h2>{chosenCategory}</h2>
-      {productsList}
+      {productsList[0]
+        ? productsList.map((product) => (
+            <Card product={product} key={product.id} />
+          ))
+        : null}
     </div>
   );
 };

@@ -7,7 +7,6 @@ const routeSlice = createSlice({
   initialState,
   reducers: {
     setRoute(state, action) {
-      console.log(action.payload)
       return action.payload;
     },
   },

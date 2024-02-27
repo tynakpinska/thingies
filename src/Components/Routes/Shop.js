@@ -1,8 +1,13 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import ProductsList from "../ProductsList";
 import { search } from "../../icons";
 
 const Shop = () => {
+
+  const chosenCategory = useSelector((state) => {
+    return state.chosenCategory;
+  });
   return (
     <>
       <h2>Shop</h2>
@@ -26,6 +31,9 @@ const Shop = () => {
           style={{ background: "#ffaaaa", outline: "none" }}
         />
       </div>
+
+      <h2>{chosenCategory}</h2>
+
       <ProductsList />
     </>
   );
