@@ -11,7 +11,7 @@ const App = () => {
   });
 
   return (
-    <div className="container-fluid text-center p-2">
+    <div className="container-fluid text-center p-0">
       <Header />
       {route === "Shop" ? (
         <Shop />

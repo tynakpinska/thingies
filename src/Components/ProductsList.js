@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "./Card";
+import Spinner from "react-bootstrap/Spinner";
 
 import { useSelector } from "react-redux";
 
@@ -29,7 +30,15 @@ const ProductsList = () => {
   let productsList = [];
 
   if (isLoading) {
-    productsList = <p>Loading...</p>;
+    productsList = (
+      <Spinner
+        animation="grow"
+        role="status"
+        style={{ marginTop: "5rem", width: "10rem", height: "10rem" }}
+      >
+        <span className="visually-hidden">Loading...</span>
+      </Spinner>
+    );
   } else if (isSuccess) {
     if (route === "Shop") {
       products.forEach((product) => {
@@ -50,11 +59,11 @@ const ProductsList = () => {
 
   return (
     <div className="row justify-content-center">
-      {productsList[0]
+      {Array.isArray(productsList)
         ? productsList.map((product) => (
             <Card product={product} key={product.id} />
           ))
-        : null}
+        : productsList}
     </div>
   );
 };

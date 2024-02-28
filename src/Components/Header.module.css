@@ -1,4 +1,20 @@
-.header:hover {
+@import url('https://fonts.googleapis.com/css2?family=Tillana:wght@400;500;600;700;800&display=swap');
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: #ffaaaa;
+  border-bottom: 1px solid #d46a6a;
+}
+
+.header h1 {
+  font-family: "Tillana", system-ui;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.logo:hover {
   cursor: pointer;
 }
 
@@ -8,6 +24,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #550000;
 }
 
 .dropdown::after {

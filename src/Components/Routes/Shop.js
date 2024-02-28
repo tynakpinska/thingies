@@ -10,7 +10,7 @@ const Shop = () => {
   });
   return (
     <>
-      <h2>Shop</h2>
+      <h2 className="mt-2">Shop</h2>
       <div
         className="input-group mt-3 mb-2 "
         style={{ width: "30vw", margin: "auto", background: "#ffaaaa", borderRadius: "50%" }}

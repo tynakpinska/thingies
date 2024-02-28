@@ -1,8 +1,9 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Dropdown from "react-bootstrap/Dropdown";
+import Badge from "react-bootstrap/Badge";
 import styles from "./Header.module.css";
-import { menu, filledHeart, basket } from "../icons";
+import { filledHeart, basket } from "../icons";
 
 import { setRoute } from "../redux/stateSlices/routeSlice";
 import { useGetCategoriesQuery } from "../redux/shopApi";
@@ -47,47 +48,45 @@ const Header = () => {
   const handleHeaderItemClick = (e) => {
     if (e.currentTarget.lastChild.innerText === "Thingies") {
       dispatch(setRoute("Shop"));
-    } else if (e.currentTarget.lastChild.classList.contains("bi-basket")) {
+    } else if (e.currentTarget.firstChild.classList.contains("bi-basket")) {
       dispatch(setRoute("Cart"));
-    } else if (e.currentTarget.lastChild.classList.contains("bi-heart-fill")) {
+    } else if (e.currentTarget.firstChild.classList.contains("bi-heart-fill")) {
       dispatch(setRoute("Favourites"));
     }
   };
 
   return (
-    <header className="d-flex justify-content-around align-items-center">
+    <header
+      className={`d-flex justify-content-around align-items-center p-2 ${styles.header}`}
+    >
       <Dropdown>
-        <Dropdown.Toggle
-          variant="secondary"
-          id="dropdown-basic"
-          className={styles.dropdown}
-        >
-          {menu}Categories
+        <Dropdown.Toggle variant="success" id="dropdown-basic">
+          Categories
         </Dropdown.Toggle>
 
         <Dropdown.Menu>
           {categoriesList.map((category) => (
-            <Dropdown.Item
-              key={category[0]}
-              className={styles.dropdownItem}
-              onClick={handleCategoryClick}
-            >
+            <Dropdown.Item key={category[0]} onClick={handleCategoryClick}>
               {category[1]}
             </Dropdown.Item>
           ))}
         </Dropdown.Menu>
       </Dropdown>
-      <div onClick={handleHeaderItemClick} className={styles.header}>
+      <div onClick={handleHeaderItemClick} className={styles.logo}>
         <h1>Thingies</h1>
       </div>
 
       <div className={styles.icon} onClick={handleHeaderItemClick}>
-        <span className={styles.numberOfItems}>{favourites.length}</span>
         {filledHeart}
+        <Badge pill bg="danger">
+          {favourites.length}
+        </Badge>
       </div>
       <div className={styles.icon} onClick={handleHeaderItemClick}>
-        <span className={styles.numberOfItems}>{cart.length}</span>
         {basket}
+        <Badge pill bg="danger">
+          {cart.length}
+        </Badge>
       </div>
     </header>
   );
