@@ -8,6 +8,8 @@ import {
   addToFavourites,
   removeFromFavourites,
 } from "../redux/stateSlices/favouritesSlice";
+import { setRoute } from "../redux/stateSlices/routeSlice";
+import { setCurrentProduct } from "../redux/stateSlices/currentProductSlice";
 
 const Card = ({ product }) => {
   const [buttonText, setButtonText] = useState("Add to cart");
@@ -32,9 +34,10 @@ const Card = ({ product }) => {
     }
   }, [cart, favourites, product]);
 
-  const handleCardClick = e => {
-    console.log('card clicked', e.target)
-  }
+  const handleCardClick = () => {
+    dispatch(setRoute("Product"));
+    dispatch(setCurrentProduct(product));
+  };
 
   const handleButtonClick = () => {
     if (buttonText === "Add to cart") {
@@ -56,37 +59,37 @@ const Card = ({ product }) => {
     }
   };
   return (
-      <div
-        className={`card col-8 col-sm-3 col-lg-2 m-2 p-3 d-flex flex-column justify-content-between ${styles.card}`}
-        style={{ backgroundColor: "#FFAAAA" }}
-        onClick ={handleCardClick}
-      >
-        <img
-          src={product.image}
-          className="card-img-top img-fluid p-2"
-          alt="..."
-          style={{
-            backgroundColor: "#FFF",
-            maxHeight: "50%",
-            minWidth: "100px",
-          }}
-        />
-        <div className="card-body p-1 d-flex flex-column justify-content-center align-items-center flex-grow-0">
-          <p className="card-title fw-bold">{product.name}</p>
-          <p>{product.price + "$"}</p>
-          <div className="d-flex align-items-center justify-items-center mt-1">
-            <div onClick={handleIconClick}>{currentIcon}</div>
-            <button
-              className={`btn ${
-                buttonText === "Add to cart" ? "btn-success" : "btn-danger"
-              } ms-2`}
-              onClick={handleButtonClick}
-            >
-              {buttonText}
-            </button>
-          </div>
+    <div
+      className={`card col-8 col-sm-3 col-lg-2 m-2 p-3 d-flex flex-column justify-content-between ${styles.card}`}
+      style={{ backgroundColor: "#FFAAAA" }}
+      onClick={handleCardClick}
+    >
+      <img
+        src={product.images[0]}
+        className="card-img-top img-fluid p-2"
+        alt="..."
+        style={{
+          backgroundColor: "#FFF",
+          maxHeight: "50%",
+          minWidth: "100px",
+        }}
+      />
+      <div className="card-body p-1 d-flex flex-column justify-content-center align-items-center flex-grow-0">
+        <p className="card-title fw-bold">{product.name}</p>
+        <p>{product.price + "$"}</p>
+        <div className="d-flex align-items-center justify-items-center mt-1">
+          <div onClick={handleIconClick}>{currentIcon}</div>
+          <button
+            className={`btn ${
+              buttonText === "Add to cart" ? "btn-success" : "btn-danger"
+            } ms-2`}
+            onClick={handleButtonClick}
+          >
+            {buttonText}
+          </button>
         </div>
       </div>
+    </div>
   );
 };
 

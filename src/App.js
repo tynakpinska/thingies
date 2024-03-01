@@ -4,6 +4,7 @@ import Header from "./Components/Header";
 import Shop from "./Components/Routes/Shop";
 import Favourites from "./Components/Routes/Favourites";
 import Cart from "./Components/Routes/Cart";
+import Product from "./Components/Routes/Product";
 
 const App = () => {
   const route = useSelector((state) => {
@@ -17,9 +18,9 @@ const App = () => {
         <Shop />
       ) : route === "Favourites" ? (
         <Favourites />
-      ) : (
+      ) : route === "Cart" ? (
         <Cart />
-      )}
+      ) : <Product/>}
     </div>
   );
 };
