@@ -5,6 +5,7 @@ import Shop from "./Components/Routes/Shop";
 import Favourites from "./Components/Routes/Favourites";
 import Cart from "./Components/Routes/Cart";
 import Product from "./Components/Routes/Product";
+import Footer from "./Components/Footer";
 
 const App = () => {
   const route = useSelector((state) => {
@@ -13,14 +14,19 @@ const App = () => {
 
   return (
     <div className="container-fluid text-center p-0">
-      <Header />
-      {route === "Shop" ? (
-        <Shop />
-      ) : route === "Favourites" ? (
-        <Favourites />
-      ) : route === "Cart" ? (
-        <Cart />
-      ) : <Product/>}
+      <div className="row justify-content-center m-auto">
+        <Header />
+        {route === "Shop" ? (
+          <Shop />
+        ) : route === "Favourites" ? (
+          <Favourites />
+        ) : route === "Cart" ? (
+          <Cart />
+        ) : (
+          <Product />
+        )}
+        <Footer />
+      </div>
     </div>
   );
 };

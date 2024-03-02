@@ -57,7 +57,7 @@ const Header = () => {
 
   return (
     <header
-      className={`d-flex justify-content-around align-items-center p-2 ${styles.header}`}
+      className={`col-12 d-flex justify-content-around align-items-center pt-2 pb-2 ps-0 pe-0 ${styles.header}`}
     >
       <Dropdown>
         <Dropdown.Toggle variant="success" id="dropdown-basic">

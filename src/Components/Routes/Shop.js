@@ -4,21 +4,17 @@ import ProductsList from "../ProductsList";
 import { search } from "../../icons";
 
 const Shop = () => {
-
   const chosenCategory = useSelector((state) => {
     return state.chosenCategory;
   });
   return (
     <>
-      <h2 className="mt-2">Shop</h2>
-      <div
-        className="input-group mt-3 mb-2 "
-        style={{ width: "30vw", margin: "auto", background: "#ffaaaa", borderRadius: "50%" }}
-      >
+      <h2 className="col-12 mt-2 ps-0 pe-0">Shop</h2>
+      <div className="col-8 input-group ps-0 pe-0">
         <span
           className="input-group-text"
           id="basic-addon1"
-          style={{ background: "#ffaaaa", outline: "none", border: "none"  }}
+          style={{ background: "#ffaaaa", outline: "none", border: "none" }}
         >
           {search}
         </span>
@@ -32,7 +28,7 @@ const Shop = () => {
         />
       </div>
 
-      <h2>{chosenCategory}</h2>
+      <h2 className="col-12 ps-0 pe-0">{chosenCategory}</h2>
 
       <ProductsList />
     </>

@@ -58,13 +58,13 @@ const ProductsList = () => {
   else if (route === "Cart") productsList = cart;
 
   return (
-    <div className="row justify-content-center">
+    <>
       {Array.isArray(productsList)
         ? productsList.map((product) => (
             <Card product={product} key={product.id} />
           ))
         : productsList}
-    </div>
+    </>
   );
 };
 

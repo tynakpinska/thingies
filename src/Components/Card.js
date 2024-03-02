@@ -60,7 +60,7 @@ const Card = ({ product }) => {
   };
   return (
     <div
-      className={`card col-8 col-sm-3 col-lg-2 m-2 p-3 d-flex flex-column justify-content-between ${styles.card}`}
+      className={`card col-10 col-sm-3 col-lg-2 m-2 p-3 justify-content-between ${styles.card}`}
       style={{ backgroundColor: "#FFAAAA" }}
       onClick={handleCardClick}
     >
