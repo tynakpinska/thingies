@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Carousel from "react-bootstrap/Carousel";
 import { heart, filledHeart, arrowLeft } from "../../icons";
+import { setRoute } from "../../redux/stateSlices/routeSlice";
 import { addToCart, removeFromCart } from "../../redux/stateSlices/cartSlice";
 import {
   addToFavourites,
@@ -17,6 +18,10 @@ const Product = () => {
   });
 
   const dispatch = useDispatch();
+
+  const handleArrowClick = () => {
+    dispatch(setRoute("Shop"))
+  }
 
   const handleButtonClick = () => {
     if (buttonText === "Add to cart") {
@@ -40,7 +45,7 @@ const Product = () => {
 
   return (
     <>
-      {arrowLeft}
+      <div onClick={handleArrowClick}>{arrowLeft}</div>
       <h3 className="m-3">Product</h3>
       <div className="d-flex align-items-center">
         <Carousel fade className="w-50 m-3">
