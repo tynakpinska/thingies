@@ -10,7 +10,7 @@ const Shop = () => {
   return (
     <>
       <h2 className="col-12 mt-2 ps-0 pe-0">Shop</h2>
-      <div className="col-8 input-group ps-0 pe-0">
+      <div className="w-50 input-group ps-0 pe-0">
         <span
           className="input-group-text"
           id="basic-addon1"

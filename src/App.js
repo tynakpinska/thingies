@@ -13,7 +13,7 @@ const App = () => {
   });
 
   return (
-    <div className="container-fluid text-center p-0">
+    <div className="container-fluid text-center p-0" style={{height: "100vh", position: "absolute"}}>
       <div className="row justify-content-center m-auto">
         <Header />
         {route === "Shop" ? (

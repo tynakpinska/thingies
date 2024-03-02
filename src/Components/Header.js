@@ -57,9 +57,9 @@ const Header = () => {
 
   return (
     <header
-      className={`col-12 d-flex justify-content-around align-items-center pt-2 pb-2 ps-0 pe-0 ${styles.header}`}
+      className={`row m-0 p-2 ${styles.header}`}
     >
-      <Dropdown>
+      <Dropdown className="col d-flex justify-content-center align-items-center p-2">
         <Dropdown.Toggle variant="success" id="dropdown-basic">
           Categories
         </Dropdown.Toggle>
@@ -72,17 +72,17 @@ const Header = () => {
           ))}
         </Dropdown.Menu>
       </Dropdown>
-      <div onClick={handleHeaderItemClick} className={styles.logo}>
-        <h1>Thingies</h1>
+      <div onClick={handleHeaderItemClick} className={`col ${styles.logo}`}>
+        <h1 className="mb-0">Thingies</h1>
       </div>
 
-      <div className={styles.icon} onClick={handleHeaderItemClick}>
+      <div className={`col ${styles.icon}`} onClick={handleHeaderItemClick}>
         {filledHeart}
         <Badge pill bg="danger">
           {favourites.length}
         </Badge>
       </div>
-      <div className={styles.icon} onClick={handleHeaderItemClick}>
+      <div className={`col ${styles.icon}`} onClick={handleHeaderItemClick}>
         {basket}
         <Badge pill bg="danger">
           {cart.length}

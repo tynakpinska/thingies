@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Tillana:wght@400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Tillana:wght@400;500;600;700;800&display=swap");
 
 .header {
   position: sticky;
@@ -12,6 +12,12 @@
   font-family: "Tillana", system-ui;
   font-weight: 600;
   font-style: normal;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .logo:hover {
@@ -42,6 +48,10 @@
 .icon {
   position: relative;
   padding: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .numberOfItems {
