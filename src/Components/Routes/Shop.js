@@ -1,36 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import ProductsList from "../ProductsList";
-import { search } from "../../icons";
+import TextInput from "../TextInput";
 
 const Shop = () => {
+  const [filteringString, setFilteringString] = useState("");
+
   const chosenCategory = useSelector((state) => {
     return state.chosenCategory;
   });
+
+  const handleInputChange = (e) => {
+    let string = e.target.value.toLowerCase();
+    setFilteringString(string);
+  };
+
   return (
     <>
-      <h2 className="col-12 mt-2 ps-0 pe-0">Shop</h2>
-      <div className="w-50 input-group ps-0 pe-0">
-        <span
-          className="input-group-text"
-          id="basic-addon1"
-          style={{ background: "#ffaaaa", outline: "none", border: "none" }}
-        >
-          {search}
-        </span>
-        <input
-          type="text"
-          className="form-control"
-          placeholder="Search..."
-          aria-label="Search bar"
-          aria-describedby="basic-addon1"
-          style={{ background: "#ffaaaa", outline: "none", border: "none" }}
-        />
-      </div>
-
-      <h2 className="col-12 ps-0 pe-0">{chosenCategory}</h2>
-
-      <ProductsList />
+      <TextInput onChange={handleInputChange} />
+      <h2 className="col-12 pt-2 ps-0 pe-0">{chosenCategory}</h2>
+      <ProductsList filteringString={filteringString} />
     </>
   );
 };

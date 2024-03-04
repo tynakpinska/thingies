@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 
 import { useGetProductsQuery } from "../redux/shopApi";
 
-const ProductsList = () => {
+const ProductsList = ({ filteringString }) => {
   const { isLoading, isSuccess, isError, error } = useGetProductsQuery();
 
   const products = useSelector((state) => {
@@ -56,6 +56,12 @@ const ProductsList = () => {
 
   if (route === "Favourites") productsList = favourites;
   else if (route === "Cart") productsList = cart;
+
+  if (filteringString !== "") {
+    productsList = productsList.filter((product) =>
+      product.name.toLowerCase().includes(filteringString)
+    );
+  }
 
   return (
     <>
