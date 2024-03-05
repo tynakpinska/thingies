@@ -14,6 +14,7 @@ import { setCurrentProduct } from "../redux/stateSlices/currentProductSlice";
 const Card = ({ product }) => {
   const [buttonText, setButtonText] = useState("Add to cart");
   const [currentIcon, setCurrentIcon] = useState(heart);
+  const [image, setImage] = useState("");
 
   const dispatch = useDispatch();
 
@@ -32,7 +33,11 @@ const Card = ({ product }) => {
     if (favourites.find((item) => item.id === product.id)) {
       setCurrentIcon(filledHeart);
     }
-  }, [cart, favourites, product]);
+    const imageUrlRegex = new RegExp(
+      /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)/gi
+    );
+    setImage(product.images[0].match(imageUrlRegex)[0]);
+  }, [cart, favourites, product, image]);
 
   const handleCardClick = () => {
     dispatch(setRoute("Product"));
@@ -65,7 +70,7 @@ const Card = ({ product }) => {
       onClick={handleCardClick}
     >
       <img
-        src={product.images[0]}
+        src={image}
         className="card-img-top img-fluid p-2"
         alt="..."
         style={{
