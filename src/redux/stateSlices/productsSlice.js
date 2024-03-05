@@ -7,13 +7,10 @@ const productsSlice = createSlice({
   initialState,
   reducers: {
     fetchProducts(state, action) {
-      return [...state, action.payload.payload];
-    },
-    filterProductsByName(state, action) {
-      state = action.payload;
+      return [...state, ...action.payload];
     },
   },
 });
 
-export const { fetchProducts, filterProductsByName } = productsSlice.actions;
+export const { fetchProducts } = productsSlice.actions;
 export default productsSlice;

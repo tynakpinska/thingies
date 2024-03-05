@@ -1,14 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Card from "./Card";
 import Spinner from "react-bootstrap/Spinner";
 
 import { useSelector } from "react-redux";
 
-import { useGetProductsQuery } from "../redux/shopApi";
-
 const ProductsList = ({ filteringString }) => {
-  const { isLoading, isSuccess, isError, error } = useGetProductsQuery();
-
   const products = useSelector((state) => {
     return state.products;
   });
@@ -27,49 +23,53 @@ const ProductsList = ({ filteringString }) => {
     return state.route;
   });
 
-  let productsList = [];
+  const [productsList, setProductsList] = useState("");
 
-  if (isLoading) {
-    productsList = (
-      <Spinner
-        animation="grow"
-        role="status"
-        style={{ marginTop: "5rem", width: "10rem", height: "10rem" }}
-      >
-        <span className="visually-hidden">Loading...</span>
-      </Spinner>
-    );
-  } else if (isSuccess) {
-    if (route === "Shop") {
-      products.forEach((product) => {
-        if (chosenCategory === "All categories") {
-          productsList.push(product);
-        } else {
+  useEffect(() => {
+    setProductsList(products);
+    if (route === "Favourites") setProductsList(favourites);
+    else if (route === "Cart") setProductsList(cart);
+    else {
+      if (filteringString !== "") {
+        let filteredByStringProductsList = productsList.filter((product) =>
+          product.name.toLowerCase().includes(filteringString)
+        );
+        setProductsList(filteredByStringProductsList);
+      }
+      if (chosenCategory !== "All categories") {
+        let filteredByCategoryProductsList = [];
+        products.forEach((product) => {
           if (product.category.name === chosenCategory)
-            productsList.push(product);
-        }
-      });
+            filteredByCategoryProductsList.push(product);
+        });
+        setProductsList(filteredByCategoryProductsList);
+      }
     }
-  } else if (isError) {
-    productsList = <p>{error}</p>;
-  }
-
-  if (route === "Favourites") productsList = favourites;
-  else if (route === "Cart") productsList = cart;
-
-  if (filteringString !== "") {
-    productsList = productsList.filter((product) =>
-      product.name.toLowerCase().includes(filteringString)
-    );
-  }
+  }, [
+    route,
+    favourites,
+    cart,
+    chosenCategory,
+    filteringString,
+    products,
+    productsList,
+  ]);
 
   return (
     <>
-      {Array.isArray(productsList)
-        ? productsList.map((product) => (
-            <Card product={product} key={product.id} />
-          ))
-        : productsList}
+      {Array.isArray(productsList) ? (
+        productsList.map((product) => (
+          <Card product={product} key={product.id} />
+        ))
+      ) : (
+        <Spinner
+          animation="grow"
+          role="status"
+          style={{ marginTop: "5rem", width: "10rem", height: "10rem" }}
+        >
+          <span className="visually-hidden">Loading...</span>
+        </Spinner>
+      )}
     </>
   );
 };

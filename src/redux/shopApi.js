@@ -8,10 +8,11 @@ export const shopApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: "https://api.escuelajs.co/api/v1" }),
   endpoints: (builder) => ({
     getProducts: builder.query({
-      query: () => "products",
+      query: () => "products?limit=20&offset=20",
       onQueryStarted: async (query, { dispatch, queryFulfilled }) => {
         const { data } = await queryFulfilled;
-        for (let i = 0; i <= 20; i++) {
+        const productsList = [];
+        for (let i = 0; i <= data.length; i++) {
           if (data[i]) {
             const { id, title, price, description, category, images } = data[i];
             let newProduct = {
@@ -22,14 +23,10 @@ export const shopApi = createApi({
               category,
               images,
             };
-            dispatch(
-              fetchProducts({
-                type: "products/fetchProducts",
-                payload: newProduct,
-              })
-            );
+            productsList.push(newProduct);
           }
         }
+        dispatch(fetchProducts(productsList));
       },
     }),
     getCategories: builder.query({

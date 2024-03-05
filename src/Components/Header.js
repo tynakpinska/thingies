@@ -37,12 +37,7 @@ const Header = () => {
   }
 
   const handleCategoryClick = (e) => {
-    dispatch(
-      setCategory({
-        type: "products/fetchProducts",
-        payload: e.target.innerText,
-      })
-    );
+    dispatch(setCategory(e.target.innerText));
   };
 
   const handleHeaderItemClick = (e) => {
@@ -56,9 +51,7 @@ const Header = () => {
   };
 
   return (
-    <header
-      className={`row m-0 p-2 ${styles.header}`}
-    >
+    <header className={`row m-0 p-2 ${styles.header}`}>
       <Dropdown className="col d-flex justify-content-center align-items-center p-2">
         <Dropdown.Toggle variant="success" id="dropdown-basic">
           Categories

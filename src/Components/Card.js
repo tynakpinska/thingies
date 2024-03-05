@@ -39,12 +39,14 @@ const Card = ({ product }) => {
     setImage(product.images[0].match(imageUrlRegex)[0]);
   }, [cart, favourites, product, image]);
 
-  const handleCardClick = () => {
+  const handleCardClick = e => {
+    e.stopPropagation();
     dispatch(setRoute("Product"));
     dispatch(setCurrentProduct(product));
   };
 
-  const handleButtonClick = () => {
+  const handleButtonClick = e => {
+    e.stopPropagation();
     if (buttonText === "Add to cart") {
       setButtonText("Remove from cart");
       dispatch(addToCart(product));
@@ -54,7 +56,8 @@ const Card = ({ product }) => {
     }
   };
 
-  const handleIconClick = () => {
+  const handleIconClick = e => {
+    e.stopPropagation();
     if (currentIcon === heart) {
       setCurrentIcon(filledHeart);
       dispatch(addToFavourites(product));

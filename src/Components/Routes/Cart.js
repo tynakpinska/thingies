@@ -18,7 +18,7 @@ const Cart = () => {
       <h2>Cart</h2>
       <ProductsList />
       <h3>Total: {sum} $</h3>
-      <button type="button" class="btn btn-primary">
+      <button type="button" className="btn btn-primary">
         Go to payment
       </button>
     </>
