@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Carousel from "react-bootstrap/Carousel";
 import { heart, filledHeart, arrowLeft } from "../../icons";
+import CustomButton from "../CustomButton";
 import { setRoute } from "../../redux/stateSlices/routeSlice";
 import { addToCart, removeFromCart } from "../../redux/stateSlices/cartSlice";
 import {
@@ -20,8 +21,8 @@ const Product = () => {
   const dispatch = useDispatch();
 
   const handleArrowClick = () => {
-    dispatch(setRoute("Shop"))
-  }
+    dispatch(setRoute("Shop"));
+  };
 
   const handleButtonClick = () => {
     if (buttonText === "Add to cart") {
@@ -85,14 +86,11 @@ const Product = () => {
           <p className="text-start">{currentProduct.price} $</p>
           <div className="d-flex align-items-center justify-items-center mt-1">
             <div onClick={handleIconClick}>{currentIcon}</div>
-            <button
-              className={`btn ${
-                buttonText === "Add to cart" ? "btn-success" : "btn-danger"
-              } ms-2`}
+            <CustomButton
+              variant={buttonText === "Add to cart" ? "success" : "danger"}
               onClick={handleButtonClick}
-            >
-              {buttonText}
-            </button>
+              value={buttonText}
+            />
           </div>
         </div>
       </div>

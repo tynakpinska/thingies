@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import Dropdown from "react-bootstrap/Dropdown";
 import Badge from "react-bootstrap/Badge";
 import styles from "./Header.module.css";
-import { filledHeart, basket } from "../icons";
+import { filledHeart, basket, boxArrowRight } from "../icons";
 
 import { setRoute } from "../redux/stateSlices/routeSlice";
 import { useGetCategoriesQuery } from "../redux/shopApi";
@@ -47,6 +47,10 @@ const Header = () => {
       dispatch(setRoute("Cart"));
     } else if (e.currentTarget.firstChild.classList.contains("bi-heart-fill")) {
       dispatch(setRoute("Favourites"));
+    } else if (
+      e.currentTarget.firstChild.classList.contains("bi-box-arrow-in-right")
+    ) {
+      dispatch(setRoute("LogIn"));
     }
   };
 
@@ -80,6 +84,9 @@ const Header = () => {
         <Badge pill bg="danger">
           {cart.length}
         </Badge>
+      </div>
+      <div className={`col ${styles.icon}`} onClick={handleHeaderItemClick}>
+        {boxArrowRight}
       </div>
     </header>
   );

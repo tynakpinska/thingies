@@ -10,6 +10,7 @@ import {
 } from "../redux/stateSlices/favouritesSlice";
 import { setRoute } from "../redux/stateSlices/routeSlice";
 import { setCurrentProduct } from "../redux/stateSlices/currentProductSlice";
+import CustomButton from "./CustomButton";
 
 const Card = ({ product }) => {
   const [buttonText, setButtonText] = useState("Add to cart");
@@ -39,13 +40,14 @@ const Card = ({ product }) => {
     setImage(product.images[0].match(imageUrlRegex)[0]);
   }, [cart, favourites, product, image]);
 
-  const handleCardClick = e => {
+  const handleCardClick = (e) => {
     e.stopPropagation();
     dispatch(setRoute("Product"));
     dispatch(setCurrentProduct(product));
   };
 
-  const handleButtonClick = e => {
+  const handleButtonClick = (e) => {
+    e.preventDefault();
     e.stopPropagation();
     if (buttonText === "Add to cart") {
       setButtonText("Remove from cart");
@@ -56,7 +58,7 @@ const Card = ({ product }) => {
     }
   };
 
-  const handleIconClick = e => {
+  const handleIconClick = (e) => {
     e.stopPropagation();
     if (currentIcon === heart) {
       setCurrentIcon(filledHeart);
@@ -87,14 +89,11 @@ const Card = ({ product }) => {
         <p>{product.price + "$"}</p>
         <div className="d-flex align-items-center justify-items-center mt-1">
           <div onClick={handleIconClick}>{currentIcon}</div>
-          <button
-            className={`btn ${
-              buttonText === "Add to cart" ? "btn-success" : "btn-danger"
-            } ms-2`}
+          <CustomButton
+            variant={buttonText === "Add to cart" ? "success" : "danger"}
             onClick={handleButtonClick}
-          >
-            {buttonText}
-          </button>
+            value={buttonText}
+          />
         </div>
       </div>
     </div>

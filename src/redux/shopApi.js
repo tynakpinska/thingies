@@ -8,7 +8,7 @@ export const shopApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: "https://api.escuelajs.co/api/v1" }),
   endpoints: (builder) => ({
     getProducts: builder.query({
-      query: () => "products?limit=20&offset=20",
+      query: () => "products?limit=20&offset=0",
       onQueryStarted: async (query, { dispatch, queryFulfilled }) => {
         const { data } = await queryFulfilled;
         const productsList = [];

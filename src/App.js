@@ -2,6 +2,8 @@ import React from "react";
 import { useSelector } from "react-redux";
 import Header from "./Components/Header";
 import Shop from "./Components/Routes/Shop";
+import LogIn from "./Components/Routes/LogIn";
+import Register from "./Components/Routes/Register";
 import Favourites from "./Components/Routes/Favourites";
 import Cart from "./Components/Routes/Cart";
 import Product from "./Components/Routes/Product";
@@ -32,6 +34,10 @@ const App = () => {
           <Favourites />
         ) : route === "Cart" ? (
           <Cart />
+        ) : route === "LogIn" ? (
+          <LogIn />
+        ) : route === "Register" ? (
+          <Register />
         ) : (
           <Product />
         )}
