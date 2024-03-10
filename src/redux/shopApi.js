@@ -1,6 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { fetchProducts } from "./stateSlices/productsSlice";
 import { fetchCategories } from "./stateSlices/categoriesSlice";
+import { setUser } from "./stateSlices/userSlice";
 
 // Define a service using a base URL and expected endpoints
 export const shopApi = createApi({
@@ -49,9 +50,18 @@ export const shopApi = createApi({
         );
       },
     }),
+    logIn: builder.query({
+      query: () => "/auth/login",
+      onQueryStarted: async (query, { dispatch, queryFulfilled }) => {
+        const { data } = await queryFulfilled;
+        console.log(data);
+        dispatch(setUser(data));
+      },
+    }),
   }),
 });
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useGetProductsQuery, useGetCategoriesQuery } = shopApi;
+export const { useGetProductsQuery, useGetCategoriesQuery, useLogInQuery } =
+  shopApi;
