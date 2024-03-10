@@ -11,8 +11,8 @@ const LogIn = () => {
   };
   return (
     <>
-      <h2>Log In</h2>
-      <Form>
+      <h2 className="d-flex justify-content-center align-items-center">Log In</h2>
+      <Form className="col-11 col-sm-4">
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control type="email" placeholder="Enter email" />
