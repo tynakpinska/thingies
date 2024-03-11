@@ -4,7 +4,6 @@ import Form from "react-bootstrap/Form";
 import CustomButton from "../CustomButton";
 
 import { setRoute } from "../../redux/stateSlices/routeSlice";
-import { useLogInQuery } from "../../redux/shopApi";
 
 const LogIn = () => {
   const [email, setEmail] = useState("");
@@ -12,10 +11,31 @@ const LogIn = () => {
 
   const dispatch = useDispatch();
 
-  const handleClick = (e) => {
+  const fetchToken = async (email, password) => {
+    try {
+      let response = await fetch("https://api.escuelajs.co/api/v1/auth/login", {
+        method: "post",
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          password,
+        }),
+      });
+      const result = await response.json();
+      console.log(result);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const handleClick = async (e) => {
     if (e.target.classList.contains("btn-link")) dispatch(setRoute("Register"));
-    else if (e.target.classList.contains("btn-success"))
-      console.log(email, password);
+    else if (e.target.classList.contains("btn-success")) {
+      fetchToken(email, password);
+    }
   };
 
   const handleInputChange = (e) => {

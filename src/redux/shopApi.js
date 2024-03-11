@@ -50,18 +50,9 @@ export const shopApi = createApi({
         );
       },
     }),
-    logIn: builder.query({
-      query: () => "/auth/login",
-      onQueryStarted: async (query, { dispatch, queryFulfilled }) => {
-        const { data } = await queryFulfilled;
-        console.log(data);
-        dispatch(setUser(data));
-      },
-    }),
   }),
 });
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useGetProductsQuery, useGetCategoriesQuery, useLogInQuery } =
-  shopApi;
+export const { useGetProductsQuery, useGetCategoriesQuery } = shopApi;
