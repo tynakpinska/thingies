@@ -80,15 +80,13 @@ const Card = ({ product }) => {
         alt="..."
         style={{
           backgroundColor: "#FFF",
-          maxHeight: "50%",
-          minWidth: "100px",
         }}
       />
       <div className="card-body p-1 d-flex flex-column justify-content-center align-items-center flex-grow-0">
         <p className="card-title fw-bold">{product.name}</p>
         <p>{product.price + "$"}</p>
         <div className="d-flex align-items-center justify-items-center mt-1">
-          <div onClick={handleIconClick}>{currentIcon}</div>
+          <div className="me-1" onClick={handleIconClick}>{currentIcon}</div>
           <CustomButton
             variant={buttonText === "Add to cart" ? "success" : "danger"}
             onClick={handleButtonClick}

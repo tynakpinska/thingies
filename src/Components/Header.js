@@ -24,6 +24,10 @@ const Header = () => {
     return state.favourites;
   });
 
+  const user = useSelector((state) => {
+    return state.user;
+  });
+
   const dispatch = useDispatch();
 
   let categoriesList = [];
@@ -85,9 +89,20 @@ const Header = () => {
           {cart.length}
         </Badge>
       </div>
-      <div className={`col ${styles.icon}`} onClick={handleHeaderItemClick}>
-        {boxArrowRight}
-      </div>
+      {user.avatar ? (
+        <div className={`col ${styles.icon}`} onClick={handleHeaderItemClick}>
+          <img
+            src={user.avatar}
+            className="rounded-circle"
+            style={{ width: "auto", height: "50px", cursor: "pointer" }}
+            alt="..."
+          ></img>
+        </div>
+      ) : (
+        <div className={`col ${styles.icon}`} onClick={handleHeaderItemClick}>
+          {boxArrowRight}
+        </div>
+      )}
     </header>
   );
 };

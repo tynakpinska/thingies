@@ -4,6 +4,7 @@ import Form from "react-bootstrap/Form";
 import CustomButton from "../CustomButton";
 
 import { setRoute } from "../../redux/stateSlices/routeSlice";
+import { setUser } from "../../redux/stateSlices/userSlice";
 
 const LogIn = () => {
   const [email, setEmail] = useState("");
@@ -25,7 +26,29 @@ const LogIn = () => {
         }),
       });
       const result = await response.json();
-      console.log(result);
+      localStorage.setItem("accessToken", result.access_token);
+      fetchUser(localStorage.getItem("accessToken"));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const fetchUser = async (token) => {
+    try {
+      let response = await fetch(
+        "https://api.escuelajs.co/api/v1/auth/profile",
+        {
+          method: "get",
+          mode: "cors",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      const result = await response.json();
+      if (result) dispatch(setUser(result));
+      dispatch(setRoute("Shop"));
     } catch (error) {
       console.log(error);
     }
