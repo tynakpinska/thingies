@@ -7,6 +7,7 @@ import Register from "./Components/Routes/Register";
 import Favourites from "./Components/Routes/Favourites";
 import Cart from "./Components/Routes/Cart";
 import Product from "./Components/Routes/Product";
+import Profile from "./Components/Routes/Profile";
 import Footer from "./Components/Footer";
 import { useGetProductsQuery } from "./redux/shopApi";
 
@@ -38,6 +39,8 @@ const App = () => {
           <LogIn />
         ) : route === "Register" ? (
           <Register />
+        ) : route === "Profile" ? (
+          <Profile />
         ) : (
           <Product />
         )}

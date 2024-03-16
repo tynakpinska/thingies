@@ -45,7 +45,9 @@ const Header = () => {
   };
 
   const handleHeaderItemClick = (e) => {
-    if (e.currentTarget.lastChild.innerText === "Thingies") {
+    if (e.target.nodeName === "IMG") {
+      dispatch(setRoute("Profile"));
+    } else if (e.currentTarget.lastChild.innerText === "Thingies") {
       dispatch(setRoute("Shop"));
     } else if (e.currentTarget.firstChild.classList.contains("bi-basket")) {
       dispatch(setRoute("Cart"));
@@ -96,6 +98,7 @@ const Header = () => {
             className="rounded-circle"
             style={{ width: "auto", height: "50px", cursor: "pointer" }}
             alt="..."
+            onClick={handleHeaderItemClick}
           ></img>
         </div>
       ) : (
