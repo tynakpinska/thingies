@@ -23,7 +23,7 @@ const Profile = () => {
         <img
           src={user.avatar}
           className="rounded-circle mb-3"
-          style={{ width: "auto", height: "200px" }}
+          style={{ width: "200px", height: "200px", objectFit: "cover", backgroundPosition: "topCenter" }}
           alt="..."
         ></img>
         <h3 className="mb-3">Username: {user.name}</h3>

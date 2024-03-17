@@ -96,7 +96,13 @@ const Header = () => {
           <img
             src={user.avatar}
             className="rounded-circle"
-            style={{ width: "auto", height: "50px", cursor: "pointer" }}
+            style={{
+              width: "50px",
+              height: "50px",
+              objectFit: "cover",
+              backgroundPosition: "topCenter",
+              cursor: "pointer",
+            }}
             alt="..."
             onClick={handleHeaderItemClick}
           ></img>
