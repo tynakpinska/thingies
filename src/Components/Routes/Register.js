@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import { Spinner } from "react-bootstrap";
 import CustomButton from "../CustomButton";
-import { setRoute } from "../../redux/stateSlices/routeSlice";
 
 const Register = () => {
   const [username, setUsername] = useState("");
@@ -13,8 +12,6 @@ const Register = () => {
   const [avatarUrl, setAvatarUrl] = useState("");
   const [warning, setWarning] = useState("");
   const [status, setStatus] = useState("");
-
-  const dispatch = useDispatch();
 
   const registerUser = async (username, email, password) => {
     try {
@@ -42,12 +39,7 @@ const Register = () => {
     }
   };
 
-  const handleLinkClick = () => {
-    dispatch(setRoute("LogIn"));
-  };
-
   const handleInputChange = (e) => {
-    console.log(e.target.id);
     if (e.target.id === "username") setUsername(e.target.value);
     else if (e.target.id === "email") setEmail(e.target.value);
     else if (e.target.id === "password") setPassword(e.target.value);
@@ -129,12 +121,9 @@ const Register = () => {
 
           <Form.Text className="mb-3" muted style={{ display: "block" }}>
             Already have an account?{" "}
-            <CustomButton
-              value="Log in."
-              variant="link"
-              onClick={handleLinkClick}
-              required
-            />
+            <Link to="/login">
+              <CustomButton value="Log in." variant="link" required />
+            </Link>
             .
           </Form.Text>
           <p style={{ color: "#dc3545" }}>{warning}</p>

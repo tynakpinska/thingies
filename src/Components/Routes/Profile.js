@@ -1,8 +1,8 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import CustomButton from "../CustomButton";
 
-import { setRoute } from "../../redux/stateSlices/routeSlice";
 import { setUser } from "../../redux/stateSlices/userSlice";
 
 const Profile = () => {
@@ -11,7 +11,6 @@ const Profile = () => {
 
   const handleClick = () => {
     dispatch(setUser({}));
-    dispatch(setRoute("Shop"));
   };
 
   return (
@@ -23,13 +22,24 @@ const Profile = () => {
         <img
           src={user.avatar}
           className="rounded-circle mb-3"
-          style={{ width: "200px", height: "200px", objectFit: "cover", backgroundPosition: "topCenter" }}
+          style={{
+            width: "200px",
+            height: "200px",
+            objectFit: "cover",
+            backgroundPosition: "topCenter",
+          }}
           alt="..."
         ></img>
         <h3 className="mb-3">Username: {user.name}</h3>
         <p className="mb-3">Role: {user.role}</p>
         <p className="mb-3">Email: {user.email}</p>
-        <CustomButton variant="warning" value="Log Out" onClick={handleClick} />
+        <Link to="/">
+          <CustomButton
+            variant="warning"
+            value="Log Out"
+            onClick={handleClick}
+          />
+        </Link>
       </div>
     </>
   );

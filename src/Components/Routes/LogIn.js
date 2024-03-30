@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import CustomButton from "../CustomButton";
 
-import { setRoute } from "../../redux/stateSlices/routeSlice";
 import { setUser } from "../../redux/stateSlices/userSlice";
 
 const LogIn = () => {
@@ -48,17 +48,13 @@ const LogIn = () => {
       );
       const result = await response.json();
       if (result) dispatch(setUser(result));
-      dispatch(setRoute("Shop"));
     } catch (error) {
       console.log(error);
     }
   };
 
-  const handleClick = async (e) => {
-    if (e.target.classList.contains("btn-link")) dispatch(setRoute("Register"));
-    else if (e.target.classList.contains("btn-success")) {
-      fetchToken(email, password);
-    }
+  const handleClick = () => {
+    fetchToken(email, password);
   };
 
   const handleInputChange = (e) => {
@@ -91,7 +87,13 @@ const LogIn = () => {
         </Form.Group>
         <Form.Text className="mb-3" muted style={{ display: "block" }}>
           If you don't have an account yet,{" "}
-          <CustomButton value="register" variant="link" onClick={handleClick} />
+          <Link to="/register">
+            <CustomButton
+              value="register"
+              variant="link"
+              onClick={handleClick}
+            />
+          </Link>
           .
         </Form.Text>
         <CustomButton value="Log In" variant="success" onClick={handleClick} />

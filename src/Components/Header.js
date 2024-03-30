@@ -1,11 +1,11 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import Dropdown from "react-bootstrap/Dropdown";
 import Badge from "react-bootstrap/Badge";
 import styles from "./Header.module.css";
 import { filledHeart, basket, boxArrowRight } from "../icons";
 
-import { setRoute } from "../redux/stateSlices/routeSlice";
 import { useGetCategoriesQuery } from "../redux/shopApi";
 import { setCategory } from "../redux/stateSlices/chosenCategorySlice";
 
@@ -44,22 +44,6 @@ const Header = () => {
     dispatch(setCategory(e.target.innerText));
   };
 
-  const handleHeaderItemClick = (e) => {
-    if (e.target.nodeName === "IMG") {
-      dispatch(setRoute("Profile"));
-    } else if (e.currentTarget.lastChild.innerText === "Thingies") {
-      dispatch(setRoute("Shop"));
-    } else if (e.currentTarget.firstChild.classList.contains("bi-basket")) {
-      dispatch(setRoute("Cart"));
-    } else if (e.currentTarget.firstChild.classList.contains("bi-heart-fill")) {
-      dispatch(setRoute("Favourites"));
-    } else if (
-      e.currentTarget.firstChild.classList.contains("bi-box-arrow-in-right")
-    ) {
-      dispatch(setRoute("LogIn"));
-    }
-  };
-
   return (
     <header className={`row m-0 p-2 ${styles.header}`}>
       <Dropdown className="col d-flex justify-content-center align-items-center p-2">
@@ -75,24 +59,23 @@ const Header = () => {
           ))}
         </Dropdown.Menu>
       </Dropdown>
-      <div onClick={handleHeaderItemClick} className={`col ${styles.logo}`}>
+      <Link to="/" className={`col ${styles.logo}`}>
         <h1 className="mb-0">Thingies</h1>
-      </div>
-
-      <div className={`col ${styles.icon}`} onClick={handleHeaderItemClick}>
-        {filledHeart}
+      </Link>
+      <div className={`col ${styles.icon}`}>
+        <Link to="/favourites">{filledHeart}</Link>
         <Badge pill bg="danger">
           {favourites.length}
         </Badge>
       </div>
-      <div className={`col ${styles.icon}`} onClick={handleHeaderItemClick}>
-        {basket}
+      <div className={`col ${styles.icon}`}>
+        <Link to="/cart">{basket}</Link>
         <Badge pill bg="danger">
           {cart.length}
         </Badge>
       </div>
       {user.avatar ? (
-        <div className={`col ${styles.icon}`} onClick={handleHeaderItemClick}>
+        <Link to="/profile" className={`col ${styles.icon}`}>
           <img
             src={user.avatar}
             className="rounded-circle"
@@ -104,13 +87,12 @@ const Header = () => {
               cursor: "pointer",
             }}
             alt="..."
-            onClick={handleHeaderItemClick}
           ></img>
-        </div>
+        </Link>
       ) : (
-        <div className={`col ${styles.icon}`} onClick={handleHeaderItemClick}>
+        <Link to="/login" className={`col ${styles.icon}`}>
           {boxArrowRight}
-        </div>
+        </Link>
       )}
     </header>
   );

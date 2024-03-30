@@ -5,8 +5,7 @@ import styles from "./TextInput.module.css";
 const TextInput = ({ onChange }) => {
   return (
     <>
-      <h2 className="col-12 mt-2 ps-0 pe-0">Shop</h2>
-      <div className="w-50 input-group ps-0 pe-0">
+      <div className="w-50 input-group mt-4 ps-0 pe-0">
         <span className={`input-group-text ${styles.input}`} id="basic-addon1">
           {search}
         </span>

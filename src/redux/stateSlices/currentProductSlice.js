@@ -7,6 +7,7 @@ const currentProductSlice = createSlice({
   initialState,
   reducers: {
     setCurrentProduct(state, action) {
+      console.log(action.payload)
       return action.payload;
     },
   },

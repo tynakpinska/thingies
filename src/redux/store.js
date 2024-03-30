@@ -1,6 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { shopApi } from "./shopApi";
-import routeSlice from "./stateSlices/routeSlice";
 import productsSlice from "./stateSlices/productsSlice";
 import categoriesSlice from "./stateSlices/categoriesSlice";
 import chosenCategorySlice from "./stateSlices/chosenCategorySlice";
@@ -9,7 +8,6 @@ import favouritesSlice from "./stateSlices/favouritesSlice";
 import currentProductSlice from "./stateSlices/currentProductSlice";
 import userSlice from "./stateSlices/userSlice";
 
-import routeReducer from "./stateSlices/routeSlice";
 import productsReducer from "./stateSlices/productsSlice";
 import categoriesReducer from "./stateSlices/categoriesSlice";
 import cartReducer from "./stateSlices/cartSlice";
@@ -22,7 +20,6 @@ export const store = configureStore(
     reducer: {
       // Add the generated reducer as a specific top-level slice
       [shopApi.reducerPath]: shopApi.reducer,
-      [routeSlice.name]: routeSlice.reducer,
       [productsSlice.name]: productsSlice.reducer,
       [categoriesSlice.name]: categoriesSlice.reducer,
       [chosenCategorySlice.name]: chosenCategorySlice.reducer,
@@ -37,7 +34,6 @@ export const store = configureStore(
       getDefaultMiddleware().concat(shopApi.middleware),
   },
   {
-    route: routeReducer,
     products: productsReducer,
     categories: categoriesReducer,
     cart: cartReducer,

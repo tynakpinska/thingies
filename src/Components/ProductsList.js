@@ -1,10 +1,17 @@
 import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
+
 import Card from "./Card";
 import Spinner from "react-bootstrap/Spinner";
 
-import { useSelector } from "react-redux";
-
 const ProductsList = ({ filteringString }) => {
+  const [productsToDisplay, setProductsToDisplay] = useState([]);
+
+  const chosenCategory = useSelector((state) => {
+    return state.chosenCategory;
+  });
+
   const products = useSelector((state) => {
     return state.products;
   });
@@ -15,34 +22,35 @@ const ProductsList = ({ filteringString }) => {
     return state.cart;
   });
 
-  const chosenCategory = useSelector((state) => {
-    return state.chosenCategory;
-  });
-
-  const route = useSelector((state) => {
-    return state.route;
-  });
-
-  const [productsList, setProductsList] = useState("");
+  const location = useLocation();
 
   useEffect(() => {
-    setProductsList(products);
-    if (route === "Favourites") setProductsList(favourites);
-    else if (route === "Cart") setProductsList(cart);
-    else {
+    const filterByCategory = () => {
+      let filteredByCategoryProductsList = [];
+      products.forEach((product) => {
+        if (product.category.name === chosenCategory)
+          filteredByCategoryProductsList.push(product);
+      });
+      return filteredByCategoryProductsList;
+    };
+
+    if (location.pathname === "/") {
+      if (chosenCategory !== "All categories")
+        setProductsToDisplay(filterByCategory());
+      else setProductsToDisplay(products);
+    } else if (location.pathname === "/favourites") {
+      setProductsToDisplay(favourites);
+    } else if (location.pathname === "/cart") {
+      setProductsToDisplay(cart);
+    }
+  }, [products, favourites, cart, chosenCategory, location.pathname]);
+
+  /*   useEffect(() => {
       if (filteringString !== "") {
         let filteredByStringProductsList = productsList.filter((product) =>
           product.name.toLowerCase().includes(filteringString)
         );
         setProductsList(filteredByStringProductsList);
-      }
-      if (chosenCategory !== "All categories") {
-        let filteredByCategoryProductsList = [];
-        products.forEach((product) => {
-          if (product.category.name === chosenCategory)
-            filteredByCategoryProductsList.push(product);
-        });
-        setProductsList(filteredByCategoryProductsList);
       }
     }
   }, [
@@ -53,12 +61,12 @@ const ProductsList = ({ filteringString }) => {
     filteringString,
     products,
     productsList,
-  ]);
+  ]); */
 
   return (
     <>
-      {Array.isArray(productsList) ? (
-        productsList.map((product) => (
+      {Array.isArray(productsToDisplay) ? (
+        productsToDisplay.map((product) => (
           <Card product={product} key={product.id} />
         ))
       ) : (

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { heart, filledHeart } from "../icons";
 import styles from "./Card.module.css";
 
@@ -8,7 +9,6 @@ import {
   addToFavourites,
   removeFromFavourites,
 } from "../redux/stateSlices/favouritesSlice";
-import { setRoute } from "../redux/stateSlices/routeSlice";
 import { setCurrentProduct } from "../redux/stateSlices/currentProductSlice";
 import CustomButton from "./CustomButton";
 
@@ -42,7 +42,6 @@ const Card = ({ product }) => {
 
   const handleCardClick = (e) => {
     e.stopPropagation();
-    dispatch(setRoute("Product"));
     dispatch(setCurrentProduct(product));
   };
 
@@ -59,6 +58,7 @@ const Card = ({ product }) => {
   };
 
   const handleIconClick = (e) => {
+    e.preventDefault();
     e.stopPropagation();
     if (currentIcon === heart) {
       setCurrentIcon(filledHeart);
@@ -69,7 +69,8 @@ const Card = ({ product }) => {
     }
   };
   return (
-    <div
+    <Link
+      to="/product"
       className={`card col-10 col-sm-3 col-lg-2 m-2 p-3 justify-content-between ${styles.card}`}
       style={{ backgroundColor: "#FFAAAA" }}
       onClick={handleCardClick}
@@ -86,7 +87,9 @@ const Card = ({ product }) => {
         <p className="card-title fw-bold">{product.name}</p>
         <p>{product.price + "$"}</p>
         <div className="d-flex align-items-center justify-items-center mt-1">
-          <div className="me-1" onClick={handleIconClick}>{currentIcon}</div>
+          <div className="me-1" onClick={handleIconClick}>
+            {currentIcon}
+          </div>
           <CustomButton
             variant={buttonText === "Add to cart" ? "success" : "danger"}
             onClick={handleButtonClick}
@@ -94,7 +97,7 @@ const Card = ({ product }) => {
           />
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
