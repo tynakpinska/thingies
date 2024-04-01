@@ -25,8 +25,8 @@ const App = () => {
 
   return (
     <div className="container-fluid text-center p-0">
-      <div className="row vh-100 justify-content-center align-items-between m-auto">
-        <Router basename="/">
+      <div className="row vh-95 justify-content-center  m-auto">
+        <Router basename="/thingies">
           <Header />
           <Routes>
             <Route path="/" element={<Shop />} />

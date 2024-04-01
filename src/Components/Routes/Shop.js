@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
 import ProductsList from "../ProductsList";
 import TextInput from "../TextInput";
 
 const Shop = () => {
   const [filteringString, setFilteringString] = useState("");
+  const location = useLocation();
 
   const chosenCategory = useSelector((state) => {
     return state.chosenCategory;
@@ -17,8 +19,12 @@ const Shop = () => {
 
   return (
     <>
-      <TextInput onChange={handleInputChange} />
-      <h2 className="col-12 pt-2 ps-0 pe-0">{chosenCategory}</h2>
+      {location.pathname === "/" ? (
+        <>
+          <TextInput onChange={handleInputChange} />
+          <h2 >{chosenCategory}</h2>
+        </>
+      ) : null}
       <ProductsList filteringString={filteringString} />
     </>
   );

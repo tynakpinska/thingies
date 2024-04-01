@@ -43,25 +43,14 @@ const ProductsList = ({ filteringString }) => {
     } else if (location.pathname === "/cart") {
       setProductsToDisplay(cart);
     }
-  }, [products, favourites, cart, chosenCategory, location.pathname]);
 
-  /*   useEffect(() => {
-      if (filteringString !== "") {
-        let filteredByStringProductsList = productsList.filter((product) =>
-          product.name.toLowerCase().includes(filteringString)
-        );
-        setProductsList(filteredByStringProductsList);
-      }
+    if (filteringString !== "") {
+      let filteredByStringProductsList = products.filter((product) =>
+        product.name.toLowerCase().includes(filteringString)
+      );
+      setProductsToDisplay(filteredByStringProductsList);
     }
-  }, [
-    route,
-    favourites,
-    cart,
-    chosenCategory,
-    filteringString,
-    products,
-    productsList,
-  ]); */
+  }, [products, favourites, cart, chosenCategory, location.pathname, filteringString]);
 
   return (
     <>
