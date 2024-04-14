@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import CustomButton from "../CustomButton";
 
@@ -11,8 +11,33 @@ const LogIn = () => {
   const [password, setPassword] = useState("");
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  const fetchToken = async (email, password) => {
+  const fetchRefreshedToken = async (refreshToken) => {
+    try {
+      let response = await fetch(
+        "https://api.escuelajs.co/api/v1/auth/refreshToken",
+        {
+          method: "post",
+          mode: "cors",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            refreshToken,
+          }),
+        }
+      );
+      const result = await response.json();
+      localStorage.setItem("accessToken", result.access_token);
+      localStorage.setItem("refreshToken", result.refresh_token);
+      fetchUser(localStorage.getItem("accessToken"));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const fetchNewToken = async (email, password) => {
     try {
       let response = await fetch("https://api.escuelajs.co/api/v1/auth/login", {
         method: "post",
@@ -27,40 +52,57 @@ const LogIn = () => {
       });
       const result = await response.json();
       localStorage.setItem("accessToken", result.access_token);
+      localStorage.setItem("refreshToken", result.refresh_token);
       fetchUser(localStorage.getItem("accessToken"));
     } catch (error) {
       console.log(error);
     }
   };
 
-  const fetchUser = async (token) => {
-    try {
-      let response = await fetch(
-        "https://api.escuelajs.co/api/v1/auth/profile",
-        {
-          method: "get",
-          mode: "cors",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
+  const fetchUser = useCallback(
+    async (token) => {
+      try {
+        let response = await fetch(
+          "https://api.escuelajs.co/api/v1/auth/profile",
+          {
+            method: "get",
+            mode: "cors",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+        const result = await response.json();
+        if (result) {
+          dispatch(setUser(result));
+          navigate("/");
         }
-      );
-      const result = await response.json();
-      if (result) dispatch(setUser(result));
-    } catch (error) {
-      console.log(error);
-    }
-  };
+      } catch (error) {
+        console.log(error);
+      }
+    },
+    [dispatch, navigate]
+  );
 
   const handleClick = () => {
-    fetchToken(email, password);
+    fetchNewToken(email, password);
   };
 
   const handleInputChange = (e) => {
     if (e.target.type === "email") setEmail(e.target.value);
     else if (e.target.type === "password") setPassword(e.target.value);
   };
+
+  useEffect(() => {
+    let token = localStorage.getItem("accessToken");
+    let refreshToken = localStorage.getItem("refreshToken");
+    if (token) {
+      fetchUser(token);
+    } else if (refreshToken) {
+      fetchRefreshedToken(refreshToken);
+    }
+  });
 
   return (
     <>
