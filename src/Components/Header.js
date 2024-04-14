@@ -5,6 +5,7 @@ import Dropdown from "react-bootstrap/Dropdown";
 import Badge from "react-bootstrap/Badge";
 import styles from "./Header.module.css";
 import { filledHeart, basket, boxArrowRight } from "../icons";
+import CustomButton from "./CustomButton";
 
 import { useGetCategoriesQuery } from "../redux/shopApi";
 import { setCategory } from "../redux/stateSlices/chosenCategorySlice";
@@ -57,23 +58,36 @@ const Header = () => {
               {category[1]}
             </Dropdown.Item>
           ))}
+          {user.role === "admin" ? (
+            <Dropdown.Item style={{ background: "#198754", color: "#fff" }}>
+              Add category
+            </Dropdown.Item>
+          ) : null}
         </Dropdown.Menu>
       </Dropdown>
       <Link to="/" className={`col ${styles.logo}`}>
         <h1 className="mb-0">Thingies</h1>
       </Link>
-      <div className={`col ${styles.icon}`}>
-        <Link to="/favourites">{filledHeart}</Link>
-        <Badge pill bg="danger">
-          {favourites.length}
-        </Badge>
-      </div>
-      <div className={`col ${styles.icon}`}>
-        <Link to="/cart">{basket}</Link>
-        <Badge pill bg="danger">
-          {cart.length}
-        </Badge>
-      </div>
+      {user.role === "admin" ? (
+        <Link to="/addProduct" className="col">
+          <CustomButton value="Add product" variant="warning"></CustomButton>
+        </Link>
+      ) : (
+        <>
+          <div className={`col ${styles.icon}`}>
+            <Link to="/favourites">{filledHeart}</Link>
+            <Badge pill bg="danger">
+              {favourites.length}
+            </Badge>
+          </div>
+          <div className={`col ${styles.icon}`}>
+            <Link to="/cart">{basket}</Link>
+            <Badge pill bg="danger">
+              {cart.length}
+            </Badge>
+          </div>
+        </>
+      )}
       {user.avatar ? (
         <Link to="/profile" className={`col ${styles.icon}`}>
           <img

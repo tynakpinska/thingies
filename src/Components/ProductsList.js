@@ -38,19 +38,30 @@ const ProductsList = ({ filteringString }) => {
       if (chosenCategory !== "All categories")
         setProductsToDisplay(filterByCategory());
       else setProductsToDisplay(products);
-    } else if (location.pathname === "/favourites") {
+    }
+
+    if (location.pathname === "/favourites") {
       setProductsToDisplay(favourites);
-    } else if (location.pathname === "/cart") {
+    }
+
+    if (location.pathname === "/cart") {
       setProductsToDisplay(cart);
     }
 
-    if (filteringString !== "") {
+    if (filteringString) {
       let filteredByStringProductsList = products.filter((product) =>
         product.name.toLowerCase().includes(filteringString)
       );
       setProductsToDisplay(filteredByStringProductsList);
     }
-  }, [products, favourites, cart, chosenCategory, location.pathname, filteringString]);
+  }, [
+    cart,
+    chosenCategory,
+    favourites,
+    filteringString,
+    location.pathname,
+    products,
+  ]);
 
   return (
     <div className="row  justify-content-center pb-5">

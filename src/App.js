@@ -3,6 +3,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./Components/Header";
 import Shop from "./Components/Routes/Shop";
+import Cart from "./Components/Routes/Cart";
 import LogIn from "./Components/Routes/LogIn";
 import Register from "./Components/Routes/Register";
 
@@ -31,7 +32,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Shop />} />
             <Route path="/favourites" element={<Shop />} />
-            <Route path="/cart" element={<Shop />} />
+            <Route path="/cart" element={<Cart />} />
             <Route path="/login" element={<LogIn />} />
             <Route path="/register" element={<Register />} />
             <Route path="/profile" element={<Profile />} />

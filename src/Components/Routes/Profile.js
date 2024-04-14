@@ -10,6 +10,7 @@ const Profile = () => {
   const user = useSelector((state) => state.user);
 
   const handleClick = () => {
+    localStorage.clear();
     dispatch(setUser({}));
   };
 
