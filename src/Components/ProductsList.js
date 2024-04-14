@@ -53,7 +53,7 @@ const ProductsList = ({ filteringString }) => {
   }, [products, favourites, cart, chosenCategory, location.pathname, filteringString]);
 
   return (
-    <>
+    <div className="row  justify-content-center pb-5">
       {Array.isArray(productsToDisplay) ? (
         productsToDisplay.map((product) => (
           <Card product={product} key={product.id} />
@@ -67,7 +67,7 @@ const ProductsList = ({ filteringString }) => {
           <span className="visually-hidden">Loading...</span>
         </Spinner>
       )}
-    </>
+    </div>
   );
 };
 
