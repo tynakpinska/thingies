@@ -8,6 +8,7 @@ import LogIn from "./Components/Routes/LogIn";
 import Register from "./Components/Routes/Register";
 
 import Product from "./Components/Routes/Product";
+import AddProduct from "./Components/Routes/AddProduct";
 import Profile from "./Components/Routes/Profile";
 import Footer from "./Components/Footer";
 import { useGetProductsQuery } from "./redux/shopApi";
@@ -37,6 +38,7 @@ const App = () => {
             <Route path="/register" element={<Register />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/product" element={<Product />} />
+            <Route path="/addProduct" element={<AddProduct />} />
           </Routes>
         </Router>
 

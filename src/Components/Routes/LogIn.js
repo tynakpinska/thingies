@@ -106,7 +106,7 @@ const LogIn = () => {
 
   return (
     <>
-      <h2 className="d-flex justify-content-center align-items-center">
+      <h2 className="d-flex justify-content-center align-items-center mt-2">
         Log In
       </h2>
       <Form className="col-11 col-sm-4">
